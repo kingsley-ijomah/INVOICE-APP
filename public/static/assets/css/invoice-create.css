@@ -1,5 +1,4 @@
 #container {
-	max-width: 1000px;
 	margin: 20px;
 }
 
@@ -8,11 +7,11 @@ label {
 }
 
 .client-field {
-	width: 90% !important;
+	width: 70% !important;
 }
 
 .invoice-header label {
-	min-width: 145px;
+	min-width: 120px;
 	text-align: right;
 	margin-right: 20px;
 }
@@ -86,4 +85,8 @@ ul {
 
 .reset {
 	margin-right: 20px;
+}
+
+.invoice-field {
+	width: 140px !important;
 }

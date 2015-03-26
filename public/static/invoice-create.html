@@ -211,7 +211,7 @@
 
             <div id="container">
                 <div class="row">
-                    <div class="col-md-11">
+                    <div class="col-md-9">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title">New Invoice</h3>
@@ -237,7 +237,10 @@
                                                 <p>
                                                     <div class="form-group">
                                                         <label>Invoice Number</label>
-                                                        <input type="text" name="" id="input" class="form-control" value="" required>
+                                                        <div class="input-group">
+                                                            <div class="input-group-addon">#</div>
+                                                            <input type="text" class="form-control invoice-field" id="exampleInputAmount">
+                                                        </div>
                                                     </div>
                                                 </p>
 
@@ -257,9 +260,19 @@
 
                                                 <p>
                                                     <div class="form-group">
+                                                        <label>Tax</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control discount-field" id="exampleInputAmount" placeholder="0">
+                                                            <div class="input-group-addon">%</div>
+                                                        </div>
+                                                    </div>
+                                                </p>
+
+                                                <p>
+                                                    <div class="form-group">
                                                         <label>Discount</label>
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control discount-field" id="exampleInputAmount">
+                                                            <input type="text" class="form-control discount-field" id="exampleInputAmount" placeholder="0">
                                                             <div class="input-group-addon">%</div>
                                                         </div>
                                                     </div>
@@ -326,11 +339,7 @@
 
                                 <div class="row">
                                     <div class="col-md-8">
-                                        <ul class="list-links">
-                                            <li><b>Total</b></li>
-                                            <li><a href="#">Add Tax</a></li>
-                                            <li><a href="#">Add Discount</a></li>
-                                        </ul>
+
                                     </div>
                                     <div class="col-md-4">
                                         <table class="table pull-right">
@@ -346,7 +355,7 @@
                                                 <tfoot>
                                                     <tr class="active">
                                                         <td><b>Balance (GBP)</b></td>
-                                                        <td><b>£200,000.00</b></td>
+                                                        <td><b>£480.00</b></td>
                                                     </tr>
                                                 </tfoot>
                                             </tbody>
@@ -370,7 +379,7 @@
                                 </div>
 
                                 <hr>
-                                
+
                                 <div class="clearfix">
                                     <button type="submit" class="btn btn-success pull-right">Save Invoice</button>
                                     <button type="reset" class="btn btn-default pull-right reset">Cancel</button>
@@ -379,7 +388,9 @@
                         </div>
                     </div>
 
-                    <div class="col-md-1"></div>
+                    <div class="col-md-3">
+                        <a class="btn btn-block btn-success" href="invoice-create.html" role="button"><i class="fa fa-check"></i> Create New Client</a>
+                    </div>
                 </div>
             </div>
             
