@@ -32,6 +32,8 @@
 
     <link rel="stylesheet" type="text/css" href="assets/css/default.css">
 
+    <link rel="stylesheet" type="text/css" href="assets/css/invoice-create.css">
+
     <!-- Feature detection -->
     <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -209,7 +211,7 @@
 
             <div id="container">
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-11">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title">New Invoice</h3>
@@ -220,46 +222,58 @@
                                 </div>
                             </div>
                             <div class="panel-body">
-                                <div class="row">
+                                <div class="row header-row">
                                     <div class="col-md-7">
                                         <div class="form-group form-inline">
                                             <label>Client</label>
-                                            <input type="text" name="" id="input" class="form-control" value="" required>
+                                            <select name="" id="input" class="form-control client-field">
+                                                <option value="">-- Select One --</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-5">
                                         <div class="form-inline">
-                                            <div class="form-group">
-                                                <label>Invoice Number</label>
-                                                <input type="text" name="" id="input" class="form-control" value="" required>
-                                            </div>
+                                            <div class="invoice-header">
+                                                <p>
+                                                    <div class="form-group">
+                                                        <label>Invoice Number</label>
+                                                        <input type="text" name="" id="input" class="form-control" value="" required>
+                                                    </div>
+                                                </p>
 
-                                            <div class="form-group">
-                                                <label>Date of Isssue</label>
-                                                <input type="text" name="" id="input" class="form-control" value="" required>
-                                            </div>
+                                                <p>
+                                                    <div class="form-group">
+                                                        <label>Date of Isssue</label>
+                                                        <input type="text" name="" id="input" class="form-control" value="" required>
+                                                    </div>
+                                                </p>
 
-                                            <div class="form-group">
-                                                <label>PO Number</label>
-                                                <input type="text" name="" id="input" class="form-control" value="" required>
-                                            </div>
+                                                <p>
+                                                    <div class="form-group">
+                                                        <label>PO Number</label>
+                                                        <input type="text" name="" id="input" class="form-control" value="" required>
+                                                    </div>
+                                                </p>
 
-                                            <div class="form-group">
-                                                <label>Discount</label>
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control" id="exampleInputAmount">
-                                                    <div class="input-group-addon">%</div>
-                                                </div>
+                                                <p>
+                                                    <div class="form-group">
+                                                        <label>Discount</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control discount-field" id="exampleInputAmount">
+                                                            <div class="input-group-addon">%</div>
+                                                        </div>
+                                                    </div>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row">
+                                <div class="row items-row">
                                     <div class="col-md-12">
                                         <table class="table table-bordered">
                                             <thead>
-                                                <tr>
+                                                <tr class="active">
                                                     <th>Qty</th>
                                                     <th>Kind</th>
                                                     <th>Description</th>
@@ -269,16 +283,41 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
+                                                    <td><input type="number" id="input" class="form-control qty-input" required></td>
+                                                    <td>
+                                                        <select name="" id="input" class="form-control">
+                                                            <option value="">hours</option>
+                                                            <option value="">service</option>
+                                                            <option value="">product</option>
+                                                            <option value="">days</option>
+                                                            <option value="">deposit</option>
+                                                            <option value="">expenses</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><textarea class="form-control descr-input" rows="1"></textarea></td>
+                                                    <td><input type="text" id="input" class="form-control price-input" required></td>
+                                                    <td><div class="line-total">£240.00</div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="number" id="input" class="form-control qty-input" required></td>
+                                                    <td>
+                                                        <select name="" id="input" class="form-control">
+                                                            <option value="">hours</option>
+                                                            <option value="">service</option>
+                                                            <option value="">product</option>
+                                                            <option value="">days</option>
+                                                            <option value="">deposit</option>
+                                                            <option value="">expenses</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><textarea class="form-control descr-input" rows="1"></textarea></td>
+                                                    <td><input type="text" id="input" class="form-control price-input" required></td>
+                                                    <td><div class="line-total">£240.00</div></td>
                                                 </tr>
                                             </tbody>
                                             <tfoot>
-                                                <tr>
-                                                    <td colspan="5">Add Line</td>
+                                                <tr class="active">
+                                                    <td colspan="5"><a class="btn btn-xs btn-success" href="#" role="button"><i class="fa fa-plus"></i>Add Line</a></td>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -286,29 +325,61 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <ul>
-                                            <li>Total</li>
-                                            <li>Add Tax</li>
-                                            <li>Add Discount</li>
-                                            <li>£0.00</li>
+                                    <div class="col-md-8">
+                                        <ul class="list-links">
+                                            <li><b>Total</b></li>
+                                            <li><a href="#">Add Tax</a></li>
+                                            <li><a href="#">Add Discount</a></li>
                                         </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <table class="table pull-right">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Invoice Total</td>
+                                                    <td>£0.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Paid to Date</td>
+                                                    <td>£0.00</td>
+                                                </tr>
+                                                <tfoot>
+                                                    <tr class="active">
+                                                        <td><b>Balance (GBP)</b></td>
+                                                        <td><b>£200,000.00</b></td>
+                                                    </tr>
+                                                </tfoot>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-12">
+                                <div class="row notes-row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label>Terms (<a href="">Set default</a>)</label>
+                                            <textarea class="form-control" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Notes</label>
                                             <textarea class="form-control" rows="3"></textarea>
                                         </div>
                                     </div>
                                 </div>
+
+                                <hr>
+                                
+                                <div class="clearfix">
+                                    <button type="submit" class="btn btn-success pull-right">Save Invoice</button>
+                                    <button type="reset" class="btn btn-default pull-right reset">Cancel</button>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-3"></div>
+                    <div class="col-md-1"></div>
                 </div>
             </div>
             
