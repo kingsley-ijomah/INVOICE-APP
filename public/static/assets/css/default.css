@@ -14,3 +14,7 @@ body, html {
 .btn {
 	color: #fff !important;
 }
+
+.form-btn {
+	margin-left: 10px;
+}
