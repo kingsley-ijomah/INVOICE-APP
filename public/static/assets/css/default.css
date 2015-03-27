@@ -2,6 +2,15 @@ body, html {
 	font-size: 16px;
 }
 
+.text-link {
+	color: #5AB2AC !important;
+	text-decoration: underline !important;
+}
+
+.text-link:hover {
+	text-decoration: underline !important;
+}
+
 .btn {
 	color: #fff !important;
 }
