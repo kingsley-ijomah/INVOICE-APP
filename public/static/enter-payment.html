@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Invoice System</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Fonts  -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/simple-line-icons.css">
+    <!-- CSS Animate -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- Daterange Picker -->
+    <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker-bs3.css">
+    <!-- Calendar demo -->
+    <link rel="stylesheet" href="assets/css/clndr.css">
+    <!-- Switchery -->
+    <link rel="stylesheet" href="assets/plugins/switchery/switchery.min.css">
+    <!-- Custom styles for this theme -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/default.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/enter-payment.css">
+
+    <!-- Feature detection -->
+    <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/vendor/html5shiv.js"></script>
+    <script src="assets/js/vendor/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <section id="main-wrapper" class="theme-default">
+        <header id="header">
+            <!--logo start-->
+            <div class="brand">
+                <a href="index.html" class="logo">
+                    <i class="icon-layers"></i>
+                    <span>INVOICE</span>SYSTEM</a>
+            </div>
+            <!--logo end-->
+            <ul class="nav navbar-nav navbar-left">
+                <li class="toggle-navigation toggle-left">
+                    <button class="sidebar-toggle" id="toggle-left">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </li>
+                <li class="toggle-profile hidden-xs">
+                    <button type="button" class="btn btn-default" id="toggle-profile">
+                        <i class="icon-user"></i>
+                    </button>
+                </li>
+                <li class="hidden-xs hidden-sm">
+                    <input type="text" class="search" placeholder="Search project...">
+                    <button type="submit" class="btn btn-sm btn-search"><i class="fa fa-search"></i>
+                    </button>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown profile hidden-xs">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="meta">
+                            <span class="avatar">
+                                <img src="assets/img/profile.jpg" class="img-circle" alt="">
+                            </span>
+                        <span class="text">Kingsley Ijomah</span>
+                        <span class="caret"></span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight" role="menu">
+                        <li>
+                            <span class="arrow top"></span>
+                            <h5>
+                                <span>80%</span>
+                                <small class="text-muted">Profile complete</small>
+                            </h5>
+                            <div class="progress progress-xs">
+                                <div class="progress-bar progress-bar" style="width: 80%">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <span class="icon"><i class="fa fa-user"></i>
+                                </span>My Account</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <span class="icon"><i class="fa fa-envelope"></i>
+                                </span>Messages</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <span class="icon"><i class="fa fa-cog"></i>
+                                </span>Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="login.html">
+                                <span class="icon"><i class="fa fa-sign-out"></i>
+                                </span>Logout</a>
+                        </li>
+                    </ul>
+                </li>
+                 <li class="toggle-fullscreen hidden-xs">
+                    <button type="button" class="btn btn-default expand" id="toggle-fullscreen">
+                        <i class="fa fa-expand"></i>
+                    </button>
+                </li>
+                <li class="toggle-navigation toggle-right">
+                    <button class="sidebar-toggle" id="toggle-right">
+                        <i class="fa fa-indent"></i>
+                    </button>
+                </li>
+            </ul>
+        </header>
+        <!--sidebar left start-->
+        <aside class="sidebar sidebar-left">
+            <div class="sidebar-profile">
+                <div class="avatar">
+                    <img class="img-circle profile-image" src="assets/img/profile.jpg" alt="profile">
+                    <i class="on border-dark animated bounceIn"></i>
+                </div>
+                <div class="profile-body dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><h4>Kingsley Ijomah <span class="caret"></span></h4></a>
+                    <small class="title">Software Eng.</small>
+                    <ul class="dropdown-menu animated fadeInRight" role="menu">
+                        <li class="profile-progress">
+                            <h5>
+                                <span>80%</span>
+                                <small>Profile complete</small>
+                            </h5>
+                            <div class="progress progress-xs">
+                                <div class="progress-bar progress-bar-primary" style="width: 80%">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <span class="icon"><i class="fa fa-user"></i>
+                                </span>My Account</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <span class="icon"><i class="fa fa-envelope"></i>
+                                </span>Messages</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <span class="icon"><i class="fa fa-cog"></i>
+                                </span>Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <span class="icon"><i class="fa fa-sign-out"></i>
+                                </span>Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <nav>
+                <h5 class="sidebar-header">Navigation</h5>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="">
+                        <a href="index.html" title="Dashboard">
+                            <i class="fa  fa-fw fa-tachometer"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="invoices.html" title="Invoices">
+                            <i class="fa fa-fw fa-money"></i>Invoices
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="clients.html" title="Clients">
+                            <i class="fa fa-fw fa-users"></i> Clients
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!--sidebar left end-->
+        <!--main content start-->
+        <section class="main-content-wrapper">
+            <div class="pageheader">
+                <h1>Enter Payment</h1>
+                <div class="breadcrumb-wrapper hidden-xs">
+                    <span class="label">You are here:</span>
+                    <ol class="breadcrumb">
+                        <li class="active">Enter Payment</li>
+                    </ol>
+                </div>
+            </div>
+
+            <section id="main-content" class="animated fadeInUp">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="alert alert-success alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <strong>Well done!</strong> Payment was successfully recorded.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><p class="text-center"><b>Invoice #0000002 for Comanpany Name</b></p></h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="content-margin">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-inline">
+                                                <div class="form-group">
+                                                    <label>Payment (GBP)</label>
+                                                    <input type="text" class="form-control" required="required">
+
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" value="">
+                                                            Pay in full
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group invoice-amount">
+                                                <label>Invoice Amount</label>
+                                                <span class="text-success">£4,000.00</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-inline">
+                                                <div class="form-group">
+                                                    <label>Method</label>
+                                                    <select name="" id="input" class="form-control">
+                                                        <option value="">Bank Transfer</option>
+                                                        <option value="">Cash</option>
+                                                        <option value="">Paypal</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-inline">
+                                                <div class="form-group">
+                                                    <label>Date</label>
+                                                    <input type="date" class="form-control" required="required">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-inline">
+                                                <div class="form-group">
+                                                    <label>Note</label>
+                                                    <textarea class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row save-payment-row">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-success btn-block">Save Payment</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            
+        </section>
+        <!--main content end-->
+    </section>
+    <!--sidebar right start-->
+    <aside id="sidebar-right">
+        <h4 class="sidebar-title">contact List</h4>
+        <div id="contact-list-wrapper">
+            <div class="heading">
+                <ul>
+                    <li class="new-contact"><a href="javascript:void(0)"><i class="fa fa-plus"></i></a>
+                    </li>
+                    <li>
+                        <input type="text" class="search" placeholder="Search">
+                        <button type="submit" class="btn btn-sm btn-search"><i class="fa fa-search"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div id="contact-list">
+                <ul>
+                    <li>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="assets/img/avatar3.png" class="img-circle" alt="">
+                          <i class="on animated bounceIn"></i>
+                        </span>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="name">Ashley Bell </div>
+                                <small class="location text-muted"><i class="icon-pointer"></i> Sarasota, FL</small>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="assets/img/avatar1.png" class="img-circle" alt="">
+                          <i class="on animated bounceIn"></i>
+                        </span>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="name">Brian Johnson </div>
+                                <small class="location text-muted"><i class="icon-pointer"></i> San Francisco, CA</small>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="assets/img/avatar2.png" class="img-circle" alt="">
+                          <i class="on animated bounceIn"></i>
+                        </span>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="name">Chris Jones </div>
+                                <small class="location text-muted"><i class="icon-pointer"></i> Brooklyn, NY</small>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="assets/img/avatar4.jpg" class="img-circle" alt="">
+                          <i class="on animated bounceIn"></i>
+                        </span>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="name">Erica Hill </div>
+                                <small class="location text-muted"><i class="icon-pointer"></i> Palo Alto, Ca</small>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="assets/img/avatar5.png" class="img-circle" alt="">
+                          <i class="away animated bounceIn"></i>
+                        </span>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="name">Greg Smith </div>
+                                <small class="location text-muted"><i class="icon-pointer"></i> London, UK</small>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="assets/img/avatar6.png" class="img-circle" alt="">
+                          <i class="on animated bounceIn"></i>
+                        </span>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="name">Jason Kendall</div>
+                                <small class="location text-muted"><i class="icon-pointer"></i> New York, NY </small>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="assets/img/avatar7.png" class="img-circle" alt="">
+                          <i class="on animated bounceIn"></i>
+                        </span>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="name">Kristen Davis </div>
+                                <small class="location text-muted"><i class="icon-pointer"></i> Greenville, SC</small>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="assets/img/avatar8.png" class="img-circle off" alt="">
+                          <i class="off animated bounceIn"></i>
+                        </span>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="name">Michael Shepard </div>
+                                <small class="location text-muted"><i class="icon-pointer"></i> Vancouver, BC</small>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="assets/img/avatar9.png" class="img-circle off" alt="">
+                          <i class="off animated bounceIn"></i>
+                        </span>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="name">Paul Allen</div>
+                                <small class="location text-muted"><i class="icon-pointer"></i> Savannah, GA</small>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="contact-user">
+                <div class="chat-user active"><span><i class="icon-bubble"></i></span>
+                </div>
+                <div class="email-user"><span><i class="icon-envelope-open"></i></span>
+                </div>
+                <div class="call-user"><span><i class="icon-call-out"></i></span>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!--/sidebar right end-->
+
+    <!--Global JS-->
+    <script src="assets/js/vendor/jquery-1.11.1.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/navgoco/jquery.navgoco.min.js"></script>
+    <script src="assets/plugins/pace/pace.min.js"></script>
+    <script src="assets/plugins/fullscreen/jquery.fullscreen-min.js"></script>
+    <script src="assets/js/src/app.js"></script>
+    <!--Page Level JS-->
+    <script src="assets/plugins/countTo/jquery.countTo.js"></script>
+    <script src="assets/plugins/weather/js/skycons.js"></script>
+    <script src="assets/plugins/daterangepicker/moment.min.js"></script>
+    <script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- ChartJS  -->
+    <script src="assets/plugins/chartjs/Chart.min.js"></script>
+    <!-- Morris  -->
+    <script src="assets/plugins/morris/js/morris.min.js"></script>
+    <script src="assets/plugins/morris/js/raphael.2.1.0.min.js"></script>
+    <!-- Vector Map  -->
+    <script src="assets/plugins/jvectormap/js/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="assets/plugins/jvectormap/js/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- Gauge  -->
+    <script src="assets/plugins/gauge/gauge.min.js"></script>
+    <script src="assets/plugins/gauge/gauge-demo.js"></script>
+    <!-- Calendar  -->
+    <script src="assets/plugins/calendar/clndr.js"></script>
+    <script src="assets/plugins/calendar/clndr-demo.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+    <!-- Switch -->
+    <script src="assets/plugins/switchery/switchery.min.js"></script>
+    <!--Load these page level functions-->
+    <script>
+    $(document).ready(function() {
+        app.dateRangePicker();
+        app.chartJs();
+        app.weather();
+        app.spinStart();
+        app.spinStop();
+    });
+    </script>
+</body>
+
+</html>
