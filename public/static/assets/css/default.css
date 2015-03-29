@@ -18,3 +18,8 @@ body, html {
 .form-btn {
 	margin-left: 10px;
 }
+
+.btn-center {
+	margin: auto !important;
+	display: block;
+}
