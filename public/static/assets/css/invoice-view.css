@@ -53,3 +53,10 @@ p {
 	margin-top: 20px;
 	margin-bottom: -15px!important;
 }
+
+.status-well {
+	background-color: #F0F3F3;
+	width: 50%;
+	margin: auto;
+	margin-bottom: 10px;
+}
