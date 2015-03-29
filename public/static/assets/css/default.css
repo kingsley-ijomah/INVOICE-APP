@@ -18,15 +18,3 @@ body, html {
 .form-btn {
 	margin-left: 10px;
 }
-
-.paid-status {
-	color: green;
-}
-
-.partial-status {
-	color: #E7AD5A;
-}
-
-.overdue-status, .disputed-status {
-	color: red;
-}
