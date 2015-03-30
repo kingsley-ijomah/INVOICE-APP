@@ -27,3 +27,12 @@ body, html {
 .pagination a {
 	color: #5AB2AC !important;
 }
+
+.modal-content {
+	padding: 20px 20px 0px 20px;
+}
+
+.modal-content p {
+	margin-bottom: 10px;
+	font-size: 15px;
+}
