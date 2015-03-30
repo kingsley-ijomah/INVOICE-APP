@@ -60,3 +60,17 @@ p {
 	margin: auto;
 	margin-bottom: 10px;
 }
+
+.box {
+	border:1px red dotted;
+}
+
+#autobiography {
+	max-width: 800px;
+	margin: auto;
+	margin-top: 25px;
+}
+
+.bio-row {
+	font-size: 13px;
+}
