@@ -210,17 +210,35 @@
             </div>
 
             <div class="row action-row">
-                <div class="col-md-5"><h1>Invoice: 000001</h1></div>
+                <div class="col-md-5"><h1>Invoice: #000001</h1></div>
                 <div class="col-md-7">
                     <div class="clearfix">
                         <div class="pull-right">
                             <a class="btn btn-sm btn-success" href="enter-payment.html" role="button">Enter Payment</a>
-                            <a class="btn btn-sm btn-success" href="#" role="button">Send Invoice</a>
+                            <a class="btn btn-sm btn-success" href="#" data-toggle="modal" data-target=".bs-example-modal-md" role="button">Send Invoice</a>
                             <a class="btn btn-sm btn-default" href="invoice-create.html" role="button">Edit</a>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                  <p>
+                        You are about to send invoice #000001 to
+                        <b>KOCO Company.</b><br>
+                        Please confirm or cancel below to complete transaction.
+                  </p>
+
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-success">Confirm</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
 
             <div id="container">
                 <div class="row">
