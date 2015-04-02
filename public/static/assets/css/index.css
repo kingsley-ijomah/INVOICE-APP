@@ -18,3 +18,20 @@
 .activity-con a:hover {
 	color: #696B6E;
 }
+
+.outstanding-row tr, td {
+	border: none !important;
+	padding-bottom: 3px !important;
+	padding-top: 3px !important;
+}
+
+.outstanding-total a{
+	font-size: 50px;
+	color: #27b6af !important;
+	text-decoration: underline;
+	margin-bottom: 0px !important;
+}
+
+.outstanding-row p {
+	margin-bottom: 0px;
+}
