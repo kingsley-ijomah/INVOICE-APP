@@ -1,0 +1,76 @@
+p {
+	font-size: 13px;
+	margin-bottom: 2px;
+}
+
+#container {
+	max-width: 800px;
+	margin: auto;
+	background-color: #fff;
+	margin-top: 30px;
+	padding: 40px;
+}
+
+.sender-details {
+	margin-bottom: 20px;
+}
+
+.summary {
+	font-size: 13px;
+}
+
+.summary tfoot {
+	font-weight: bold;
+}
+
+.summary tbody tr td {
+	border: none;
+	padding-top: 0px;
+}
+
+#items {
+	margin-top: 30px;
+}
+
+#items tfoot {
+	border-top: 2px #eee solid;
+}
+
+#items tfoot tr td{
+	border: none;
+	padding-bottom: 0px;
+}
+
+.powered {
+	font-size: 12px;
+	color: #CACAD9;
+	margin-top: 50px;
+}
+
+.action-row {
+	max-width: 820px;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: -15px!important;
+}
+
+.status-well {
+	background-color: #F0F3F3;
+	width: 50%;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+.box {
+	border:1px red dotted;
+}
+
+#autobiography {
+	max-width: 800px;
+	margin: auto;
+	margin-top: 25px;
+}
+
+.bio-row {
+	font-size: 13px;
+}

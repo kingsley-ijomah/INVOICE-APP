@@ -1,0 +1,37 @@
+.activity-con {
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+
+.activity-con ul {
+	list-style: none;
+}
+
+.activity-con ul li {
+	margin-bottom: 10px;
+}
+
+.activity-con a {
+	color: #A8A9AB;
+}
+
+.activity-con a:hover {
+	color: #696B6E;
+}
+
+.outstanding-row tr, td {
+	border: none !important;
+	padding-bottom: 3px !important;
+	padding-top: 3px !important;
+}
+
+.outstanding-total a{
+	font-size: 50px;
+	color: #27b6af !important;
+	text-decoration: underline;
+	margin-bottom: 0px !important;
+}
+
+.outstanding-row p {
+	margin-bottom: 0px;
+}
