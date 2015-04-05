@@ -3,6 +3,16 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  devise_for :users, controllers: { 
+    sessions: "users/sessions", 
+    passwords: "users/passwords",
+    confirmations: "users/confirmations",
+    mailer: "users/mailer",
+    shared: "users/shared",
+    unlocks: "users/unlocks",
+    registrations: "users/registrations",
+  }
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   get '/', :to => redirect('/static/index.html')
