@@ -10,7 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// https://github.com/PerfectlyNormal/highcharts-rails
+//
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require highcharts
+//= require highcharts/highcharts-more
 //= require_tree .
