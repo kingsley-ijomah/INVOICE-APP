@@ -28,5 +28,34 @@ module InvoiceApp
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
+    # precompile vendor assets
+    config.assets.precompile += %w( base.js )
+    config.assets.precompile += %w( base.css )
+    #controller css assets
+    config.assets.precompile += [
+
+                                 'dashboard.css',
+                                 'ui.css',
+                                 'forms.css',
+                                 'tables.css',
+                                 'charts.css',
+                                 'mail.css',
+                                 'maps.css'
+          
+                                ]
+    #controller js assets
+    config.assets.precompile += [
+
+                                 'dashboard.js',
+                                 'ui.js',
+                                 'forms.js',
+                                 'tables.js',
+                                 'charts.js',
+                                 'mail.js',
+                                 'maps.js'
+          
+                                ]
   end
 end
