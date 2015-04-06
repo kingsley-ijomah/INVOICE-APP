@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/mongoid/mongoid.git
-  revision: a9f9464cfd1ee805d727f7b728a6e9fc64eeb700
+  revision: 7ae983a788c44f9c8b8184ceb68d5eef963bd8a9
   specs:
     mongoid (4.0.2)
       activemodel (~> 4.0)
@@ -211,5 +211,6 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spring
   turbolinks
+  tzinfo-data
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
