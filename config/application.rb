@@ -57,5 +57,10 @@ module InvoiceApp
                                  'maps.js'
           
                                 ]
+                                
+    #required to get migration to work with mongoid
+    config.generators do |g|
+      g.orm :active_record
+    end
   end
 end
