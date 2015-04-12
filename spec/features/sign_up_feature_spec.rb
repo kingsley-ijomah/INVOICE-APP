@@ -8,7 +8,8 @@ feature "user creates account" do
 	  	fill_in 'user_password', with: 'thisisatestpassword'
 	  	fill_in 'user_password_confirmation', with: 'thisisatestpassword'
 	  	click_button 'sign_up'
-	  # expect(current_path).to eq(user_registration_path)
+
+	 	 	expect(current_path).to eq(root_path)
   end
 
   scenario "with invalid data" do
