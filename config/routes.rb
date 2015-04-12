@@ -13,11 +13,13 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
   }
 
+  resources :dashboard
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  get '/', :to => redirect('/static/index.html')
+  # get '/', :to => redirect('/static/index.html')
 
-  root to: "home#index"
+  root to: "dashboard#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
