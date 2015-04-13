@@ -49,6 +49,17 @@ group :development, :test do
   gem 'spring'
 
   gem 'rspec-rails'
+
+  #gem 'pry', '~> 0.10.1'
+
+  # provides a binding.pry method for debugging
+  gem 'pry-rails', '~> 0.3.4'
+
+  # makes it possible to use next to move to next line of code
+  gem 'pry-nav', '~> 0.2.4'
+
+  # allows use of up and down methods to move to next method in the stack, show all track with show-stack method
+  gem 'pry-stack_explorer', '~> 0.4.9.2'
 end
 
 group :test do 
