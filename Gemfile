@@ -28,6 +28,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 # Graphing
 gem 'highcharts-rails'
+# gem for require and autoloading files
+gem 'require_all', '~> 1.3.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
