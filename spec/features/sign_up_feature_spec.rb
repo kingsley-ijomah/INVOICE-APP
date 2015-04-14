@@ -7,12 +7,12 @@ feature "User creates account" do
       
       within "#new_user" do
     		fill_in 'user_name', with: 'kingsley'
-  	  	fill_in 'user_email', with: 'kingsley@test.com'
+  	  	fill_in 'user_email', with: 'kingsley3@test.com'
   	  	fill_in 'user_password', with: 'thisisthetestsubmit'
   	  	fill_in 'user_password_confirmation', with: 'thisisthetestsubmit'
       end
       click_button 'Sign up'
-      
+     
 	 	 	expect(current_path).to eq(root_path)
       expect(page).to have_content('Welcome! You have signed up successfully.')
   end
