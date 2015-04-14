@@ -60,6 +60,9 @@ group :development, :test do
 
   # allows use of up and down methods to move to next method in the stack, show all track with show-stack method
   gem 'pry-stack_explorer', '~> 0.4.9.2'
+
+  # specific matchers for mongoid
+  gem 'mongoid-rspec', '~> 2.2.0'
 end
 
 group :test do 
