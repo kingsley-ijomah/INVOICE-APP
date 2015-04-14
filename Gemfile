@@ -67,7 +67,7 @@ group :development, :test do
   gem 'mongoid-rspec', '~> 2.2.0'
 
   # alternatives to fixtures
-  gem 'factory_girl', '~> 4.5.0'
+  gem 'factory_girl_rails', '~> 4.5.0'
 
   # used to easily generate fake data: names, addresses, phone numbers, etc.
   gem 'faker', '~> 1.4.3'

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature "User creates account" do
-  @javascript
+  
   scenario "with valid data" do
   	  visit new_user_registration_path
       
