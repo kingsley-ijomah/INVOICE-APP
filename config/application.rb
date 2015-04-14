@@ -29,6 +29,8 @@ module InvoiceApp
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    config.serve_static_assets = true
+
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
     # precompile vendor assets
     config.assets.precompile += %w( base.js )
