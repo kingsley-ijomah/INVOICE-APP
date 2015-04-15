@@ -71,6 +71,9 @@ group :development, :test do
 
   # used to easily generate fake data: names, addresses, phone numbers, etc.
   gem 'faker', '~> 1.4.3'
+
+  # add selenium driver
+  gem 'selenium-webdriver'
 end
 
 group :test do 
