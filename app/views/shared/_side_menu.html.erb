@@ -44,7 +44,7 @@
         </ul>
     </div>
   </div>
-  <nav>
+  <nav id="main_navigation">
       <h5 class="sidebar-header">Navigation</h5>
       <ul class="nav nav-pills nav-stacked">
           <li class="active">
@@ -52,15 +52,15 @@
                   <i class="fa  fa-fw fa-tachometer"></i> Dashboard
               </a>
           </li>
-          <li class="">
+          <li>
               <a href="invoices.html" title="Dashboard">
                   <i class="fa fa-fw fa-money"></i>Invoices
               </a>
           </li>
-          <li class="">
-              <a href="clients.html" title="Clients">
-                  <i class="fa fa-fw fa-users"></i> Clients
-              </a>
+          <li>
+            <%= link_to clients_path, :title => 'Clients' do %>
+                <i class="fa fa-fw fa-users"></i> Clients
+            <% end %>
           </li>
       </ul>
   </nav>
