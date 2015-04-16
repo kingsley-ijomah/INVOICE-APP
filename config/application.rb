@@ -43,7 +43,6 @@ module InvoiceApp
                                  'charts.css',
                                  'mail.css',
                                  'maps.css'
-          
                                 ]
     #controller js assets
     config.assets.precompile += [
