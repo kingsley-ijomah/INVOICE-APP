@@ -58,7 +58,10 @@
       </div>
 
       <div class="col-md-3">
-          <a class="btn btn-block btn-success" href="new-organisation.html" role="button" data-toggle="modal" data-target=".load-new-organisation"><i class="fa fa-check"></i> Create new Organisation</a>
+          <%= link_to new_organisation_path, class: 'btn btn-block btn-success', role: 'button', 
+          :data => {target: '.load-new-organisation', toggle: 'modal'} do %>
+            <i class="fa fa-check"></i> Create new Organisation
+          <% end %>
       </div>
   </div>
 

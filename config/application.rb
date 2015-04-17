@@ -42,7 +42,8 @@ module InvoiceApp
                                  'tables.css',
                                  'charts.css',
                                  'mail.css',
-                                 'maps.css'
+                                 'maps.css',
+                                 'clients.css'
                                 ]
     #controller js assets
     config.assets.precompile += [

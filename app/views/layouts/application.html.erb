@@ -33,8 +33,13 @@
   <section class="main-content-wrapper">
       <%= render 'shared/page_header' %>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% end %>
+
+      <% if alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
 
       <%= yield %>
 
@@ -42,7 +47,6 @@
 </section>
 
 <%= render 'shared/contact_list' %>
-
 
  <!-- Global scripts -->
  <%= javascript_include_tag 'base' %>

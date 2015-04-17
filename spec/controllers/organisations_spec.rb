@@ -6,6 +6,11 @@ describe OrganisationsController do
 			get 'new'
 			expect(assigns[:organisation]).to_not be_nil
 		end
+
+		it 'checks that render method was called' do
+			get 'new'
+			expect(response).to render_template(:layout => 'plain')
+		end
 	end
 
 	describe 'Post #create' do

@@ -1,4 +1,6 @@
 class OrganisationsController < ApplicationController 
+	layout 'plain', :only => [:new]
+
 	def new
 		@organisation = Organisation.new
 	end
