@@ -13,8 +13,7 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
   }
 
-  resources :dashboard
-  resources :clients
+  resources :dashboard, :clients, :organisations
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
