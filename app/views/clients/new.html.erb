@@ -11,48 +11,46 @@
                   </div>
               </div>
               <div class="panel-body">
-                  <div class="row">
-                      <div class="col-md-12">
-                          <div class="form-group">
-                              <select name="" id="input" class="form-control">
-                                  <option value="">-- Select Organisation --</option>
-                              </select>
-                          </div>
 
-                          <div class="form-group">
-                              <select name="" id="input" class="form-control">
-                                  <option value="">-- Contact Type --</option>
-                                  <option value="">Primary Contact (Receives invoice sent to org.)</option>
-                                  <option value="">Secondary Contact</option>
-                              </select>
-                          </div>
+                  <%= form_for @client do |f| %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <%= f.collection_select(:organisation_id, Organisation.all, :id, :name) %>
+                            </div>
 
-                          <div class="form-group">
-                              <input type="text" class="form-control" placeholder="First Name" id="first-name">
-                          </div>
+                            <div class="form-group">
+                                <%= f.select(:city_id, [['Primary Contact', true], ['Secondary Contact', false]]) %>
+                            </div>
 
-                          <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Last Name" id="last-name">
-                          </div>
+                            <div class="form-group">
+                                <%= f.text_field :first_name, class: 'form-control', placeholder: 'First Name', id: 'first-name' %>
+                            </div>
 
-                          <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Email" id="email">
-                          </div>
+                            <div class="form-group">
+                                <%= f.text_field :last_name, class: 'form-control', placeholder: 'Last Name', id: 'last-name' %>
+                            </div>
 
-                          <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Telephone" id="telephone">
-                          </div>
+                            <div class="form-group">
+                                <%= f.text_field :email, class: 'form-control', placeholder: 'Email', id: 'email' %>
+                            </div>
 
-                          <div class="form-group">
-                              <textarea class="form-control" placeholder="Internal Note"></textarea>
-                          </div>
-                      </div>
-                  </div>
+                            <div class="form-group">
+                                <%= f.text_field :tel, class: 'form-control', placeholder: 'Telephone', id: 'telephone' %>
+                            </div>
 
-                  <div class="clearfix">
-                      <button type="submit" class="btn btn-success pull-right">Save</button>
-                      <button type="reset" class="btn btn-default pull-right reset">Cancel</button>
-                  </div>
+                            <div class="form-group">
+                                <%= f.text_area :note, class: 'form-control', placeholder: 'Internal Note' %>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix">
+                        <%= f.submit "Save Client", class: 'btn btn-success pull-right' %>
+                        <button type="reset" class="btn btn-default pull-right reset">Cancel</button>
+                    </div>
+                  <% end %>
+
               </div>
           </div>
       </div>
