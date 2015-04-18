@@ -16,16 +16,16 @@ feature 'Client' do
 	scenario 'create valid client' do
 		@organisation = create(:organisation)
 		visit new_client_path
-		select @organisation.id from: 'Select Organisation'
-		selct 'true' from: 'Contact Type'
-		fill_in 'first_name' with: Faker::Name.first_name
-		fill_in 'last_name' with: Faker::Name.last_name
-		fill_in 'email' with: Faker::Internet.email
-		fill_in 'tel' with: Faker::PhoneNumber.phone_number
-		fill_in 'note' with: Faker::Lorem.sentence
+		select @organisation.id, from: 'Select Organisation'
+		selct 'true', from: 'Contact Type'
+		fill_in 'first_name', with: Faker::Name.first_name
+		fill_in 'last_name', with: Faker::Name.last_name
+		fill_in 'email', with: Faker::Internet.email
+		fill_in 'tel', with: Faker::PhoneNumber.phone_number
+		fill_in 'note', with: Faker::Lorem.sentence
 
 		click_button 'Save Client'
-	
+
 		expect(current_path).to eq clients_path
 	end
 end
