@@ -4,7 +4,7 @@ class Client
 
 	belongs_to :organisation
 
-	field :conatct_type, type: Boolean
+	field :contact_type, type: Boolean
 	field :first_name, type: String
 	field :last_name, type: String
 	field :email, type: String

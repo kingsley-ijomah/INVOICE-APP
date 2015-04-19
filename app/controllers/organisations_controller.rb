@@ -8,7 +8,7 @@ class OrganisationsController < ApplicationController
 	def create
 		@organisation = Organisation.new(organisation_params)
 		if @organisation.save
-			redirect_to 'index'
+			redirect_to new_client_path
 		else
 			render 'new'
 		end

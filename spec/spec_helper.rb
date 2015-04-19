@@ -20,6 +20,7 @@
 require 'require_all'
 
 require_rel 'support'
+require_rel 'helpers'
 
 RSpec.configure do |config|
 

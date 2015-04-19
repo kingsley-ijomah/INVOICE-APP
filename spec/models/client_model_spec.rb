@@ -6,6 +6,6 @@ describe Client do
 	end
 
 	describe 'fields' do
-		it { is_expected.to have_fields(:conatct_type, :first_name, :last_name, :email, :tel, :note)}
+		it { is_expected.to have_fields(:contact_type, :first_name, :last_name, :email, :tel, :note)}
 	end
 end
