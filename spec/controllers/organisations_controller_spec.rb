@@ -4,7 +4,7 @@ describe OrganisationsController do
 	describe 'Get #new' do
 		it 'sets @organisation instance variable' do
 			get 'new'
-			expect(assigns[:organisation]).to_not be_nil
+			expect(assigns[:organisation]).to be_an_instance_of Organisation
 		end
 
 		it 'checks that render method was called' do
