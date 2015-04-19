@@ -13,4 +13,6 @@ class Organisation
   field :city, type: String
   field :town, type: String
   field :post_code, type: String
+
+  has_many :clients
 end
