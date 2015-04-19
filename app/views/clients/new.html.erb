@@ -16,11 +16,11 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <%= f.collection_select(:organisation_id, Organisation.all, :id, :name) %>
+                                <%= select("client", "organisation_id", Organisation.all.collect {|p| [ p.name, p.id ] }, {prompt: 'Select Organisation'}, class: 'form-control') %>
                             </div>
 
                             <div class="form-group">
-                                <%= f.select(:city_id, [['Primary Contact', true], ['Secondary Contact', false]]) %>
+                                <%= f.select(:conatct_type, [['Primary Contact', true], ['Secondary Contact', false]], {}, { class: 'form-control' }) %>
                             </div>
 
                             <div class="form-group">
@@ -40,7 +40,7 @@
                             </div>
 
                             <div class="form-group">
-                                <%= f.text_area :note, class: 'form-control', placeholder: 'Internal Note' %>
+                                <%= f.text_area :note, class: 'form-control', placeholder: 'Internal Note', id: 'note' %>
                             </div>
                         </div>
                     </div>
