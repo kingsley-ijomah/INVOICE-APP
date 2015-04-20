@@ -12,6 +12,12 @@
               </div>
               <div class="panel-body">
 
+                  <% if @client.errors.full_messages.any? %>
+                    <% @client.errors.full_messages.each do |error_message| %>
+                      <p class="text-danger"><%= error_message %> </p>
+                    <% end %>
+                  <% end %>
+
                   <%= form_for @client do |f| %>
                     <div class="row">
                         <div class="col-md-12">
