@@ -4,8 +4,13 @@ include SharedMockSpecHelper
 describe ClientsController do 
 	describe 'Get #index' do
 		it 'assigns all clients to variable @client' do
+			client = double('client')
+			allow(Client).to receive(:all).and_return(client)
+
 			get 'index'
-			expect(assigns[:clients]).not_to be_nil 
+			
+			expect(assigns[:clients]).to eq client 
+			expect(Client).to have_received(:all)
 		end
 	end
 
