@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController 
 	def index
-		@clients = Client.all
+		@clients = Client.all.page params[:page]
 	end
 
 	def new

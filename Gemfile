@@ -30,6 +30,8 @@ gem 'devise'
 gem 'highcharts-rails'
 # gem for require and autoloading files
 gem 'require_all', '~> 1.3.2'
+# paginate
+gem 'kaminari'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

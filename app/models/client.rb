@@ -4,6 +4,8 @@ class Client
 
 	belongs_to :organisation
 
+	paginates_per 2
+
 	validates :contact_type, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
