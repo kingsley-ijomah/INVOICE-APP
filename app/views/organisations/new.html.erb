@@ -6,6 +6,7 @@
         </div>
     </div>
     <div class="panel-body">
+      <%= showValidationErrors(model: @organisation) %>
       <%= form_for @organisation do |f| %>
         <div class="row">
           <div class="col-md-12" id="organisaton_form">
