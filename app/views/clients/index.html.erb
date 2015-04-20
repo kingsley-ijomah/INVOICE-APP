@@ -24,50 +24,19 @@
                         </thead>
 
                         <tbody>
+                            <% @clients.each do | client | %>
                             <tr>
-                                <td><a href="#" class="text-link">KOCO London</a></td>
-                                <td>Kingsley</td>
-                                <td>Ijomah</td>
-                                <td>kingsley.ijomah@gmail.com</td>
-                                <td>07615 ### ###</td>
+                                <td><a href="#" class="text-link"><%= client.organisation.name %></a></td>
+                                <td><%= client.first_name %></td>
+                                <td><%= client.last_name %></td>
+                                <td><%= client.email %></td>
+                                <td><%= client.tel %></td>
                                 <td>
                                     <a class="btn btn-xs btn-square btn-success" href="client-view.html" role="button">view</a>
                                     <a class="btn btn-xs btn-square btn-primary" href="#" role="button">edit</a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td><a href="#" class="text-link">KOCO London</a></td>
-                                <td>Kingsley</td>
-                                <td>Ijomah</td>
-                                <td>kingsley.ijomah@gmail.com</td>
-                                <td>07615 ### ###</td>
-                                <td>
-                                    <a class="btn btn-xs btn-square btn-success" href="client-view.html" role="button">view</a>
-                                    <a class="btn btn-xs btn-square btn-primary" href="#" role="button">edit</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" class="text-link">KOCO London</a></td>
-                                <td>Kingsley</td>
-                                <td>Ijomah</td>
-                                <td>kingsley.ijomah@gmail.com</td>
-                                <td>07615 ### ###</td>
-                                <td>
-                                    <a class="btn btn-xs btn-square btn-success" href="client-view.html" role="button">view</a>
-                                    <a class="btn btn-xs btn-square btn-primary" href="#" role="button">edit</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="#" class="text-link">KOCO London</a></td>
-                                <td>Kingsley</td>
-                                <td>Ijomah</td>
-                                <td>kingsley.ijomah@gmail.com</td>
-                                <td>07615 ### ###</td>
-                                <td>
-                                    <a class="btn btn-xs btn-square btn-success" href="client-view.html" role="button">view</a>
-                                    <a class="btn btn-xs btn-square btn-primary" href="#" role="button">edit</a>
-                                </td>
-                            </tr>
+                            <% end %>
                         </tbody>
                     </table>
                     <ul class="pagination">
