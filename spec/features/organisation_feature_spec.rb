@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Organisation' do
-	scenario 'Create organisation' do 
+	scenario 'create valid organisation' do 
 		visit new_organisation_path
 		expect {
 			within '#organisaton_form' do
@@ -14,5 +14,17 @@ feature 'Organisation' do
 			end
 			click_button 'Create Organisation'
 		}.to change(Organisation, :count).by(1)
+	end
+
+	scenario 'create invalid organisation' do
+		expect {
+			visit new_organisation_path
+			click_button 'Create Organisation'
+		}.to change(Client, :count).by(0)
+
+		expect(page).to have_content("Name can't be blank")
+		expect(page).to have_content("Street 1 can't be blank")
+		expect(page).to have_content("City can't be blank")
+		expect(page).to have_content("Town can't be blank")
 	end
 end
