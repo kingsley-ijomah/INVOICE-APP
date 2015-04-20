@@ -27,6 +27,14 @@ feature 'Client' do
 
 			click_button 'Save Client'
 		}.to change(Client, :count).by(1)
+
+		@last_created = Client.last
+
+		expect(page).to have_content @last_created.first_name
+		expect(page).to have_content @last_created.last_name
+		expect(page).to have_content @last_created.email
+		expect(page).to have_content @last_created.tel
+		expect(page).to have_content @last_created.organisation.name
 	end
 
 	scenario 'create invalid client' do

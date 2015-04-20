@@ -20,7 +20,7 @@ feature 'Organisation' do
 		expect {
 			visit new_organisation_path
 			click_button 'Create Organisation'
-		}.to change(Client, :count).by(0)
+		}.to change(Organisation, :count).by(0)
 
 		expect(page).to have_content("Name can't be blank")
 		expect(page).to have_content("Street 1 can't be blank")
