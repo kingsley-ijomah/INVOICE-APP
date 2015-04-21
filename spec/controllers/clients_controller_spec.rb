@@ -83,4 +83,20 @@ describe ClientsController do
 			expect(response).to render_template 'edit'
 		end
 	end
+
+	describe 'Delete #destroy' do 
+		let(:client) { create(:client) }
+
+		it 'deletes client' do 
+			client_double = double('client')
+			allow(Client).to receive(:find).with(client.id).and_return(client_double)
+			allow(client_double).to receive(:destroy)
+
+			delete 'destroy', id: client.id, client: client
+
+			expect(Client).to have_received(:find).with(client.id)
+			expect(client_double).to have_received(:destroy)
+			expect(response).to redirect_to clients_path
+		end
+	end
 end
