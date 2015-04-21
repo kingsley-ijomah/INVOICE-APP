@@ -7,5 +7,6 @@ FactoryGirl.define do
 		email Faker::Internet.email
 		tel Faker::PhoneNumber.phone_number
 		note Faker::Lorem.sentence
+		association :organisation, factory: :organisation
   end
 end
