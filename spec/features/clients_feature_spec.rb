@@ -63,4 +63,12 @@ feature 'Client' do
 		expect(page).to have_content 'john'
 		expect(page).to have_content 'doe'
 	end
+
+	scenario 'delete client' do 
+		@client = create(:client)
+		expect {
+			visit clients_path
+			click_link 'delete'
+		}.to change(Client, :count).by(-1)
+	end
 end
