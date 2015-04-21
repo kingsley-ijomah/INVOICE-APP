@@ -32,7 +32,7 @@
                                 <td><%= client.email %></td>
                                 <td><%= client.tel %></td>
                                 <td>
-                                    <a class="btn btn-xs btn-square btn-success" href="client-view.html" role="button">view</a>
+                                    <%= link_to 'delete', client_path(client), method: :delete, class: 'btn btn-xs btn-square btn-danger delete_client', role: 'button' %>
                                     <%= link_to 'edit', edit_client_path(client), class: 'btn btn-xs btn-square btn-primary edit_client', role: 'button' %>
                                 </td>
                             </tr>
