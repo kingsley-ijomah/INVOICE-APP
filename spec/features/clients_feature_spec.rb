@@ -49,4 +49,18 @@ feature 'Client' do
 		expect(page).to have_content("Email can't be blank")
 		expect(page).to have_content("Tel can't be blank")
 	end
+
+	scenario 'edit client' do
+		@client = create(:client)
+
+		visit clients_path
+		click_link 'edit'
+
+		fill_in 'first-name', with: 'john'
+		fill_in 'last-name', with: 'doe'
+		click_button 'Save Client'
+	
+		expect(page).to have_content 'john'
+		expect(page).to have_content 'doe'
+	end
 end
