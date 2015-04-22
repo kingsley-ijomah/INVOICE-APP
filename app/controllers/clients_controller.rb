@@ -30,10 +30,13 @@ class ClientsController < ApplicationController
 		end
 	end
 
+	def show
+	end
+
 	def destroy
 		@client = Client.find(params[:id])
 		@client.destroy
-		
+
 		redirect_to clients_path
 	end
 
