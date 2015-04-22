@@ -32,8 +32,14 @@
                                 <td><%= client.email %></td>
                                 <td><%= client.tel %></td>
                                 <td>
-                                    <%= link_to 'delete', client_path(client), method: :delete, class: 'btn btn-xs btn-square btn-danger delete_client', role: 'button' %>
-                                    <%= link_to 'edit', edit_client_path(client), class: 'btn btn-xs btn-square btn-primary edit_client', role: 'button' %>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <%= button_to "delete", client_path(:id => client.id), :method => :delete, class: 'btn btn-xs btn-square btn-danger delete_client', data: { confirm: 'Are you sure?' } %>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <%= link_to 'edit', edit_client_path(client), class: 'btn btn-xs btn-square btn-primary edit_client', role: 'button' %>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                             <% end %>
