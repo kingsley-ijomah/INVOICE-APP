@@ -1,319 +1,148 @@
-<section id="main-wrapper" class="theme-default">
-  <header id="header">
-      <!--logo start-->
-      <div class="brand">
-          <a href="index.html" class="logo">
-              <i class="icon-layers"></i>
-              <span>INVOICE</span>SYSTEM</a>
-      </div>
-      <!--logo end-->
-      <ul class="nav navbar-nav navbar-left">
-          <li class="toggle-navigation toggle-left">
-              <button class="sidebar-toggle" id="toggle-left">
-                  <i class="fa fa-bars"></i>
-              </button>
-          </li>
-          <li class="toggle-profile hidden-xs">
-              <button type="button" class="btn btn-default" id="toggle-profile">
-                  <i class="icon-user"></i>
-              </button>
-          </li>
-          <li class="hidden-xs hidden-sm">
-              <input type="text" class="search" placeholder="Search project...">
-              <button type="submit" class="btn btn-sm btn-search"><i class="fa fa-search"></i>
-              </button>
-          </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown profile hidden-xs">
-              <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                  <span class="meta">
-                      <span class="avatar">
-                          <img src="assets/img/profile.jpg" class="img-circle" alt="">
-                      </span>
-                  <span class="text">Kingsley Ijomah</span>
-                  <span class="caret"></span>
-                  </span>
-              </a>
-              <ul class="dropdown-menu animated fadeInRight" role="menu">
-                  <li>
-                      <span class="arrow top"></span>
-                      <h5>
-                          <span>80%</span>
-                          <small class="text-muted">Profile complete</small>
-                      </h5>
-                      <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar" style="width: 80%">
-                          </div>
-                      </div>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                      <a href="javascript:void(0);">
-                          <span class="icon"><i class="fa fa-user"></i>
-                          </span>My Account</a>
-                  </li>
-                  <li>
-                      <a href="javascript:void(0);">
-                          <span class="icon"><i class="fa fa-envelope"></i>
-                          </span>Messages</a>
-                  </li>
-                  <li>
-                      <a href="javascript:void(0);">
-                          <span class="icon"><i class="fa fa-cog"></i>
-                          </span>Settings</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                      <a href="login.html">
-                          <span class="icon"><i class="fa fa-sign-out"></i>
-                          </span>Logout</a>
-                  </li>
-              </ul>
-          </li>
-           <li class="toggle-fullscreen hidden-xs">
-              <button type="button" class="btn btn-default expand" id="toggle-fullscreen">
-                  <i class="fa fa-expand"></i>
-              </button>
-          </li>
-          <li class="toggle-navigation toggle-right">
-              <button class="sidebar-toggle" id="toggle-right">
-                  <i class="fa fa-indent"></i>
-              </button>
-          </li>
-      </ul>
-  </header>
-  <!--sidebar left start-->
-  <aside class="sidebar sidebar-left">
-      <div class="sidebar-profile">
-          <div class="avatar">
-              <img class="img-circle profile-image" src="assets/img/profile.jpg" alt="profile">
-              <i class="on border-dark animated bounceIn"></i>
-          </div>
-          <div class="profile-body dropdown">
-              <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><h4>Kingsley Ijomah <span class="caret"></span></h4></a>
-              <small class="title">Software Eng.</small>
-              <ul class="dropdown-menu animated fadeInRight" role="menu">
-                  <li class="profile-progress">
-                      <h5>
-                          <span>80%</span>
-                          <small>Profile complete</small>
-                      </h5>
-                      <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-primary" style="width: 80%">
-                          </div>
-                      </div>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                      <a href="javascript:void(0);">
-                          <span class="icon"><i class="fa fa-user"></i>
-                          </span>My Account</a>
-                  </li>
-                  <li>
-                      <a href="javascript:void(0);">
-                          <span class="icon"><i class="fa fa-envelope"></i>
-                          </span>Messages</a>
-                  </li>
-                  <li>
-                      <a href="javascript:void(0);">
-                          <span class="icon"><i class="fa fa-cog"></i>
-                          </span>Settings</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                      <a href="javascript:void(0);">
-                          <span class="icon"><i class="fa fa-sign-out"></i>
-                          </span>Logout</a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-      <nav>
-          <h5 class="sidebar-header">Navigation</h5>
-          <ul class="nav nav-pills nav-stacked">
-              <li class="">
-                  <a href="index.html" title="Dashboard">
-                      <i class="fa  fa-fw fa-tachometer"></i> Dashboard
-                  </a>
-              </li>
-              <li class="active">
-                  <a href="invoices.html" title="Invoices">
-                      <i class="fa fa-fw fa-money"></i>Invoices
-                  </a>
-              </li>
-              <li class="">
-                  <a href="clients.html" title="Clients">
-                      <i class="fa fa-fw fa-users"></i> Clients
-                  </a>
-              </li>
-          </ul>
-      </nav>
-  </aside>
-  <!--sidebar left end-->
-  <!--main content start-->
-  <section class="main-content-wrapper">
-      <div class="pageheader">
-          <h1>Invoices</h1>
-          <div class="breadcrumb-wrapper hidden-xs">
-              <span class="label">You are here:</span>
-              <ol class="breadcrumb">
-                  <li><a href="index.html">Dashboard</a>
-                  </li>
-                  <li class="active">Invoices</li>
-              </ol>
-          </div>
-      </div>
+<section id="main-content" class="animated fadeInUp">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <strong>Well done!</strong> You successfully created a new record.
+            </div>
+        </div>
+    </div>
 
-      <section id="main-content" class="animated fadeInUp">
-          <div class="row">
-              <div class="col-md-9">
-                  <div class="alert alert-success alert-dismissable">
-                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                      <strong>Well done!</strong> You successfully created a new record.
-                  </div>
-              </div>
-          </div>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Data Tables</h3>
+                    <div class="actions pull-right">
+                        <i class="fa fa-expand"></i>
+                        <i class="fa fa-chevron-down"></i>
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Client</th>
+                                <th>Invoice</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
 
-          <div class="row">
-              <div class="col-md-9">
-                  <div class="panel panel-default">
-                      <div class="panel-heading">
-                          <h3 class="panel-title">Data Tables</h3>
-                          <div class="actions pull-right">
-                              <i class="fa fa-expand"></i>
-                              <i class="fa fa-chevron-down"></i>
-                              <i class="fa fa-times"></i>
-                          </div>
-                      </div>
-                      <div class="panel-body">
-                          <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                              <thead>
-                                  <tr>
-                                      <th>Client</th>
-                                      <th>Invoice</th>
-                                      <th>Description</th>
-                                      <th>Date</th>
-                                      <th>Amount</th>
-                                      <th>Status</th>
-                                      <th>Actions</th>
-                                  </tr>
-                              </thead>
+                        <tbody>
+                            <tr>
+                                <td>KOCO</td>
+                                <td><a href="invoice-view.html" class="text-link">0000001</a></td>
+                                <td>Application Development</td>
+                                <td>28/03/2015</td>
+                                <td>£9,000.00</td>
+                                <td class="text-muted">draft</td>
+                                <td>
+                                    <a class="btn btn-xs btn-square btn-default" href="invoice-view.html" role="button">view</a>
+                                    <a class="btn btn-xs btn-square btn-info" href="invoice-create.html" role="button">edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KOCO</td>
+                                <td><a href="invoice-view.html" class="text-link">0000002</a></td>
+                                <td>Application Development</td>
+                                <td>28/03/2015</td>
+                                <td>£9,000.00</td>
+                                <td class="text-muted">sent</td>
+                                <td>
+                                    <a class="btn btn-xs btn-square btn-default" href="invoice-view.html" role="button">view</a>
+                                    <a class="btn btn-xs btn-square btn-info" href="invoice-create.html" role="button">edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KOCO</td>
+                                <td><a href="invoice-view.html" class="text-link">0000003</a></td>
+                                <td>Application Development</td>
+                                <td>28/03/2015</td>
+                                <td>£9,000.00</td>
+                                <td class="text-muted">viewed</td>
+                                <td>
+                                    <a class="btn btn-xs btn-square btn-default" href="invoice-view.html" role="button">view</a>
+                                    <a class="btn btn-xs btn-square btn-info" href="invoice-create.html" role="button">edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KOCO</td>
+                                <td><a href="invoice-view.html" class="text-link">0000004</a></td>
+                                <td>Application Development</td>
+                                <td>28/03/2015</td>
+                                <td>£9,000.00</td>
+                                <td class="text-success">paid</td>
+                                <td>
+                                    <a class="btn btn-xs btn-square btn-default" href="invoice-view.html" role="button">view</a>
+                                    <a class="btn btn-xs btn-square btn-info" href="invoice-create.html" role="button">edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KOCO</td>
+                                <td><a href="invoice-view.html" class="text-link">0000005</a></td>
+                                <td>Application Development</td>
+                                <td>28/03/2015</td>
+                                <td>£9,000.00</td>
+                                <td class="text-warning">partial</td>
+                                <td>
+                                    <a class="btn btn-xs btn-square btn-default" href="invoice-view.html" role="button">view</a>
+                                    <a class="btn btn-xs btn-square btn-info" href="invoice-create.html" role="button">edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KOCO</td>
+                                <td><a href="invoice-view.html" class="text-link">0000006</a></td>
+                                <td>Application Development</td>
+                                <td>28/03/2015</td>
+                                <td>£9,000.00</td>
+                                <td class="text-danger">overdue</td>
+                                <td>
+                                    <a class="btn btn-xs btn-square btn-default" href="invoice-view.html" role="button">view</a>
+                                    <a class="btn btn-xs btn-square btn-info" href="invoice-create.html" role="button">edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KOCO</td>
+                                <td><a href="invoice-view.html" class="text-link">0000007</a></td>
+                                <td>Application Development</td>
+                                <td>28/03/2015</td>
+                                <td>£9,000.00</td>
+                                <td class="text-danger">disputed</td>
+                                <td>
+                                    <a class="btn btn-xs btn-square btn-default" href="invoice-view.html" role="button">view</a>
+                                    <a class="btn btn-xs btn-square btn-info" href="invoice-create.html" role="button">edit</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                              <tbody>
-                                  <tr>
-                                      <td>KOCO</td>
-                                      <td><a href="invoice-view.html" class="text-link">0000001</a></td>
-                                      <td>Application Development</td>
-                                      <td>28/03/2015</td>
-                                      <td>£9,000.00</td>
-                                      <td class="text-muted">draft</td>
-                                      <td>
-                                          <a class="btn btn-xs btn-square btn-default" href="invoice-view.html" role="button">view</a>
-                                          <a class="btn btn-xs btn-square btn-info" href="invoice-create.html" role="button">edit</a>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>KOCO</td>
-                                      <td><a href="invoice-view.html" class="text-link">0000002</a></td>
-                                      <td>Application Development</td>
-                                      <td>28/03/2015</td>
-                                      <td>£9,000.00</td>
-                                      <td class="text-muted">sent</td>
-                                      <td>
-                                          <a class="btn btn-xs btn-square btn-default" href="invoice-view.html" role="button">view</a>
-                                          <a class="btn btn-xs btn-square btn-info" href="invoice-create.html" role="button">edit</a>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>KOCO</td>
-                                      <td><a href="invoice-view.html" class="text-link">0000003</a></td>
-                                      <td>Application Development</td>
-                                      <td>28/03/2015</td>
-                                      <td>£9,000.00</td>
-                                      <td class="text-muted">viewed</td>
-                                      <td>
-                                          <a class="btn btn-xs btn-square btn-default" href="invoice-view.html" role="button">view</a>
-                                          <a class="btn btn-xs btn-square btn-info" href="invoice-create.html" role="button">edit</a>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>KOCO</td>
-                                      <td><a href="invoice-view.html" class="text-link">0000004</a></td>
-                                      <td>Application Development</td>
-                                      <td>28/03/2015</td>
-                                      <td>£9,000.00</td>
-                                      <td class="text-success">paid</td>
-                                      <td>
-                                          <a class="btn btn-xs btn-square btn-default" href="invoice-view.html" role="button">view</a>
-                                          <a class="btn btn-xs btn-square btn-info" href="invoice-create.html" role="button">edit</a>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>KOCO</td>
-                                      <td><a href="invoice-view.html" class="text-link">0000005</a></td>
-                                      <td>Application Development</td>
-                                      <td>28/03/2015</td>
-                                      <td>£9,000.00</td>
-                                      <td class="text-warning">partial</td>
-                                      <td>
-                                          <a class="btn btn-xs btn-square btn-default" href="invoice-view.html" role="button">view</a>
-                                          <a class="btn btn-xs btn-square btn-info" href="invoice-create.html" role="button">edit</a>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>KOCO</td>
-                                      <td><a href="invoice-view.html" class="text-link">0000006</a></td>
-                                      <td>Application Development</td>
-                                      <td>28/03/2015</td>
-                                      <td>£9,000.00</td>
-                                      <td class="text-danger">overdue</td>
-                                      <td>
-                                          <a class="btn btn-xs btn-square btn-default" href="invoice-view.html" role="button">view</a>
-                                          <a class="btn btn-xs btn-square btn-info" href="invoice-create.html" role="button">edit</a>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>KOCO</td>
-                                      <td><a href="invoice-view.html" class="text-link">0000007</a></td>
-                                      <td>Application Development</td>
-                                      <td>28/03/2015</td>
-                                      <td>£9,000.00</td>
-                                      <td class="text-danger">disputed</td>
-                                      <td>
-                                          <a class="btn btn-xs btn-square btn-default" href="invoice-view.html" role="button">view</a>
-                                          <a class="btn btn-xs btn-square btn-info" href="invoice-create.html" role="button">edit</a>
-                                      </td>
-                                  </tr>
-                              </tbody>
-                          </table>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <ul class="pagination">
+                                <li><a href="#">&laquo;</a></li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">&raquo;</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="text-right invoice_totals"><b>Invoice totals:</b> &nbsp; £63,000.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                          <div class="row">
-                              <div class="col-md-8">
-                                  <ul class="pagination">
-                                      <li><a href="#">&laquo;</a></li>
-                                      <li><a href="#">1</a></li>
-                                      <li><a href="#">2</a></li>
-                                      <li><a href="#">3</a></li>
-                                      <li><a href="#">4</a></li>
-                                      <li><a href="#">5</a></li>
-                                      <li><a href="#">&raquo;</a></li>
-                                  </ul>
-                              </div>
-                              <div class="col-md-4">
-                                  <p class="text-right invoice_totals"><b>Invoice totals:</b> &nbsp; £63,000.00</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="col-md-3">
-                  <a class="btn btn-block btn-success" href="invoice-create.html" role="button"><i class="fa fa-check"></i> Create Invoice</a>
-              </div>
-          </div>
-      </section>
-      
-  </section>
-  <!--main content end-->
+        <div class="col-md-3">
+            <a class="btn btn-block btn-success" href="invoice-create.html" role="button"><i class="fa fa-check"></i> Create Invoice</a>
+        </div>
+    </div>
 </section>

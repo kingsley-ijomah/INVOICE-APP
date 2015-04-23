@@ -48,14 +48,14 @@
       <h5 class="sidebar-header">Navigation</h5>
       <ul class="nav nav-pills nav-stacked">
           <li class="active">
-              <a href="index.html" title="Dashboard">
-                  <i class="fa  fa-fw fa-tachometer"></i> Dashboard
-              </a>
+              <%= link_to dashboard_index_path, :title => 'Dashboard' do %>
+                <i class="fa fa-fw fa-tachometer"></i> Dashboard
+              <% end %>
           </li>
           <li>
-              <a href="invoices.html" title="Dashboard">
-                  <i class="fa fa-fw fa-money"></i>Invoices
-              </a>
+            <%= link_to invoices_path, :title => 'Invoices' do %>
+              <i class="fa fa-fw fa-money"></i> Invoices
+            <% end %>
           </li>
           <li>
             <%= link_to clients_path, :title => 'Clients' do %>
