@@ -7,7 +7,8 @@ gem 'rails', '4.2.1'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 
-gem 'mongoid', github: 'mongoid/mongoid'
+gem 'mongoid', '~> 4.0.0'
+
 gem 'bson_ext'
 
 gem 'uglifier', '>= 1.3.0'
