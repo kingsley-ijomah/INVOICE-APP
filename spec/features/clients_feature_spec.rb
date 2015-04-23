@@ -68,7 +68,7 @@ feature 'Client' do
 		@client = create(:client)
 		expect {
 			visit clients_path
-			click_link 'delete'
+			click_button 'delete'
 		}.to change(Client, :count).by(-1)
 	end
 end
