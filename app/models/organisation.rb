@@ -15,4 +15,5 @@ class Organisation
   field :post_code, type: String
 
   has_many :clients
+  # has_many :invoices
 end
