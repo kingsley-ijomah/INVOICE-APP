@@ -6,7 +6,11 @@
         </div>
     </div>
     <div class="panel-body">
-      <%= showValidationErrors(model: @organisation) %>
+      
+      <% @organisation.errors.full_messages.each do |msg| %>
+        <p class="text-danger"><%= msg %> </p>
+      <% end %>
+
       <%= form_for @organisation do |f| %>
         <div class="row">
           <div class="col-md-12" id="organisaton_form">

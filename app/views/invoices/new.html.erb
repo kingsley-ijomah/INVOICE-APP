@@ -12,7 +12,9 @@
                   </div>
               </div>
 
-              <%= showValidationErrors(model: @invoice) %>
+              <% @invoice.errors.full_messages.each do |msg| %>
+                <p class="text-danger"><%= msg %> </p>
+              <% end %>
 
               <%= form_for @invoice do |f| %>
               <div class="panel-body">
