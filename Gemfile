@@ -33,6 +33,9 @@ gem 'highcharts-rails'
 gem 'require_all', '~> 1.3.2'
 # paginate
 gem 'kaminari'
+# date select
+gem 'bootstrap-datepicker', '~> 1.2.0'
+gem 'bootstrap-datepicker-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
