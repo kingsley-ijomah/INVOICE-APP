@@ -14,6 +14,11 @@ RSpec.describe InvoicesController, type: :controller do
       get :new
       expect(response).to have_http_status(:success)
     end
+
+    it "assings Invoice.new to @invoice" do
+      get :new
+      expect(assigns[:invoice]).to be_an_instance_of Invoice
+    end
   end
 
 end
