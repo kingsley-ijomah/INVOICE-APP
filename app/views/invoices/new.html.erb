@@ -3,180 +3,181 @@
     <div class="row">
         <div class="col-md-9">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">New Invoice</h3>
-                    <div class="actions pull-right">
-                        <i class="fa fa-expand"></i>
-                        <i class="fa fa-chevron-down"></i>
-                        <i class="fa fa-times"></i>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <div class="row header-row">
-                        <div class="col-md-7">
-                            <div class="form-group form-inline">
-                                <label>Client</label>
-                                <select name="" id="input" class="form-control client-field">
-                                    <option value="">-- Select One --</option>
-                                    <option value="">-- Kingsley Ijomah (KOCO LTD.) --</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="form-inline">
-                                <div class="invoice-header">
-                                    <p>
-                                        <div class="form-group">
-                                            <label>Invoice Number</label>
-                                            <div class="input-group">
-                                                <div class="input-group-addon">#</div>
-                                                <input type="text" class="form-control invoice-field" id="exampleInputAmount">
-                                            </div>
-                                        </div>
-                                    </p>
+              <div class="panel-heading">
+                  <h3 class="panel-title">New Invoice</h3>
+                  <div class="actions pull-right">
+                      <i class="fa fa-expand"></i>
+                      <i class="fa fa-chevron-down"></i>
+                      <i class="fa fa-times"></i>
+                  </div>
+              </div>
 
-                                    <p>
-                                        <div class="form-group">
-                                            <label>Date of Isssue</label>
-                                            <input type="text" name="" id="input" class="form-control" value="" required>
-                                        </div>
-                                    </p>
+              <%= showValidationErrors(model: @invoice) %>
 
-                                    <p>
-                                        <div class="form-group">
-                                            <label>PO Number</label>
-                                            <input type="text" name="" id="input" class="form-control" value="" required>
-                                        </div>
-                                    </p>
+              <%= form_for @invoice do |f| %>
+              <div class="panel-body">
+                  <div class="row header-row">
+                      <div class="col-md-7">
+                          <div class="form-group form-inline">
+                              <label>Client</label>
+                              <%= select("invoice", "client_id", Client.all.collect {|p| [ p.first_name, p.id ] }, {prompt: 'Select Client'}, class: 'form-control client-field') %>
+                          </div>
+                      </div>
+                      <div class="col-md-5">
+                          <div class="form-inline">
+                              <div class="invoice-header">
+                                  <p>
+                                      <div class="form-group">
+                                          <label>Invoice Number</label>
+                                          <div class="input-group">
+                                              <div class="input-group-addon">#</div>
+                                              <%= f.text_field :number, class: 'form-control invoice-field', required: true %>
+                                          </div>
+                                      </div>
+                                  </p>
 
-                                    <p>
-                                        <div class="form-group">
-                                            <label>Tax</label>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control discount-field" id="exampleInputAmount" placeholder="0">
-                                                <div class="input-group-addon">%</div>
-                                            </div>
-                                        </div>
-                                    </p>
+                                  <p>
+                                      <div class="form-group">
+                                          <label>Date of Isssue</label>
+                                          <%= f.text_field :date_of_issue, class: 'form-control', data: {provide: 'datepicker'} %>
+                                      </div>
+                                  </p>
 
-                                    <p>
-                                        <div class="form-group">
-                                            <label>Discount</label>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control discount-field" id="exampleInputAmount" placeholder="0">
-                                                <div class="input-group-addon">%</div>
-                                            </div>
-                                        </div>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                  <p>
+                                      <div class="form-group">
+                                          <label>PO Number</label>
+                                          <%= f.text_field :po_number, class: 'form-control' %>
+                                      </div>
+                                  </p>
 
-                    <div class="row items-row">
-                        <div class="col-md-12">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr class="active">
-                                        <th>Qty</th>
-                                        <th>Kind</th>
-                                        <th>Description</th>
-                                        <th>Price</th>
-                                        <th>Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><input type="number" id="input" class="form-control qty-input" required></td>
-                                        <td>
-                                            <select name="" id="input" class="form-control">
-                                                <option value="">hours</option>
-                                                <option value="">service</option>
-                                                <option value="">product</option>
-                                                <option value="">days</option>
-                                                <option value="">deposit</option>
-                                                <option value="">expenses</option>
-                                            </select>
-                                        </td>
-                                        <td><textarea class="form-control descr-input" rows="1"></textarea></td>
-                                        <td><input type="text" id="input" class="form-control price-input" required></td>
-                                        <td><div class="line-total">£240.00</div></td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="number" id="input" class="form-control qty-input" required></td>
-                                        <td>
-                                            <select name="" id="input" class="form-control">
-                                                <option value="">hours</option>
-                                                <option value="">service</option>
-                                                <option value="">product</option>
-                                                <option value="">days</option>
-                                                <option value="">deposit</option>
-                                                <option value="">expenses</option>
-                                            </select>
-                                        </td>
-                                        <td><textarea class="form-control descr-input" rows="1"></textarea></td>
-                                        <td><input type="text" id="input" class="form-control price-input" required></td>
-                                        <td><div class="line-total">£240.00</div></td>
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr class="active">
-                                        <td colspan="5"><a class="btn btn-xs btn-success" href="#" role="button"><i class="fa fa-plus"></i>Add Line</a></td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-                    </div>
+                                  <p>
+                                      <div class="form-group">
+                                          <label>Tax</label>
+                                          <div class="input-group">
+                                              <input type="text" class="form-control discount-field" id="exampleInputAmount" placeholder="10" style="background-color:white" disabled>
+                                              <div class="input-group-addon">%</div>
+                                          </div>
+                                      </div>
+                                  </p>
 
-                    <div class="row">
-                        <div class="col-md-8">
+                                  <p>
+                                      <div class="form-group">
+                                          <label>Discount</label>
+                                          <div class="input-group">
+                                              <%= f.text_field :discount, class: 'form-control discount-field', placeholder: '0' %>
+                                              <div class="input-group-addon">%</div>
+                                          </div>
+                                      </div>
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
 
-                        </div>
-                        <div class="col-md-4">
-                            <table class="table pull-right">
-                                <tbody>
-                                    <tr>
-                                        <td>Invoice Total</td>
-                                        <td>£0.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Paid to Date</td>
-                                        <td>£0.00</td>
-                                    </tr>
-                                    <tfoot>
-                                        <tr class="active">
-                                            <td><b>Balance (GBP)</b></td>
-                                            <td><b>£480.00</b></td>
-                                        </tr>
-                                    </tfoot>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                  <div class="row items-row">
+                      <div class="col-md-12">
+                          <table class="table table-bordered">
+                              <thead>
+                                  <tr class="active">
+                                      <th>Qty</th>
+                                      <th>Kind</th>
+                                      <th>Description</th>
+                                      <th>Price</th>
+                                      <th>Total</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td><input type="number" id="input" class="form-control qty-input" required></td>
+                                      <td>
+                                          <select name="" id="input" class="form-control">
+                                              <option value="">hours</option>
+                                              <option value="">service</option>
+                                              <option value="">product</option>
+                                              <option value="">days</option>
+                                              <option value="">deposit</option>
+                                              <option value="">expenses</option>
+                                          </select>
+                                      </td>
+                                      <td><textarea class="form-control descr-input" rows="1"></textarea></td>
+                                      <td><input type="text" id="input" class="form-control price-input" required></td>
+                                      <td><div class="line-total">£240.00</div></td>
+                                  </tr>
+                                  <tr>
+                                      <td><input type="number" id="input" class="form-control qty-input" required></td>
+                                      <td>
+                                          <select name="" id="input" class="form-control">
+                                              <option value="">hours</option>
+                                              <option value="">service</option>
+                                              <option value="">product</option>
+                                              <option value="">days</option>
+                                              <option value="">deposit</option>
+                                              <option value="">expenses</option>
+                                          </select>
+                                      </td>
+                                      <td><textarea class="form-control descr-input" rows="1"></textarea></td>
+                                      <td><input type="text" id="input" class="form-control price-input" required></td>
+                                      <td><div class="line-total">£240.00</div></td>
+                                  </tr>
+                              </tbody>
+                              <tfoot>
+                                  <tr class="active">
+                                      <td colspan="5"><a class="btn btn-xs btn-success" href="#" role="button"><i class="fa fa-plus"></i>Add Line</a></td>
+                                  </tr>
+                              </tfoot>
+                          </table>
+                      </div>
+                  </div>
 
-                    <div class="row notes-row">
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label>Terms (<a href="">Set default</a>)</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Notes</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                        </div>
-                    </div>
+                  <div class="row">
+                      <div class="col-md-8">
 
-                    <hr>
+                      </div>
+                      <div class="col-md-4">
+                          <table class="table pull-right">
+                              <tbody>
+                                  <tr>
+                                      <td>Invoice Total</td>
+                                      <td>£0.00</td>
+                                  </tr>
+                                  <tr>
+                                      <td>Paid to Date</td>
+                                      <td>£0.00</td>
+                                  </tr>
+                                  <tfoot>
+                                      <tr class="active">
+                                          <td><b>Balance (GBP)</b></td>
+                                          <td><b>£480.00</b></td>
+                                      </tr>
+                                  </tfoot>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
 
-                    <div class="clearfix">
-                        <button type="submit" class="btn btn-success pull-right form-btn">Save Draft & Send Invoice</button>
-                        <button type="submit" class="btn btn-success pull-right form-btn">Save Draft</button>
-                        <button type="reset" class="btn btn-default pull-right form-btn">Cancel</button>
-                    </div>
-                </div>
+                  <div class="row notes-row">
+                      <div class="col-md-8">
+                          <div class="form-group">
+                              <label>Terms (<a href="">Set default</a>)</label>
+                              <textarea class="form-control" rows="3"></textarea>
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label>Notes</label>
+                              <%= f.text_area :note, class: 'form-control', rows: 3 %>
+                          </div>
+                      </div>
+                  </div>
+
+                  <hr>
+
+                  <div class="clearfix">
+                      <%= f.submit "Save Draft", class: 'btn btn-success pull-right form-btn' %>
+                      <button type="reset" class="btn btn-default pull-right form-btn">Cancel</button>
+                  </div>
+              </div>
+              <% end %>
             </div>
         </div>
 

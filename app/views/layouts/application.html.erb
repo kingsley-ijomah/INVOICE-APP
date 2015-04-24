@@ -58,5 +58,14 @@
  <%= javascript_include_tag 'application' %>
  <%= yield :javascript %>
  
+ <script type="text/javascript">
+$('#invoice_date_of_issue').datepicker({
+    clearBtn: true,
+    multidate: false,
+    autoclose: true,
+    todayHighlight: true
+});
+</script>
+
 </body>
 </html>
