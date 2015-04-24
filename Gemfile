@@ -34,6 +34,7 @@ gem 'require_all', '~> 1.3.2'
 # paginate
 gem 'kaminari'
 # date select
+gem 'compass', '~> 1.0.3'
 gem 'bootstrap-datepicker', '~> 1.2.0'
 gem 'bootstrap-datepicker-rails'
 

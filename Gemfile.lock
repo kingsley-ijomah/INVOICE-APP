@@ -278,6 +278,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.4.4)
   coffee-rails (~> 4.1.0)
+  compass (~> 1.0.3)
   database_cleaner (~> 1.4.1)
   devise
   factory_girl_rails (~> 4.5.0)
