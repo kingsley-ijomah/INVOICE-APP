@@ -13,3 +13,4 @@
 // https://github.com/PerfectlyNormal/highcharts-rails
 
 //= require src/app
+//= require bootstrap-datepicker
