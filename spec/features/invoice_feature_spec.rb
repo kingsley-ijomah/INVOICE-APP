@@ -4,12 +4,12 @@ feature Invoice do
 	scenario 'valid invoice' do 
 		client = create(:client)
 
-		visit invoices_path
-		select client.name, from: 'client_select'
-		fill_in 'number', with: '11'
-		fill_in 'date_of_issue', with: Time.now
-		fill_in 'po_number', with: '1'
-		fill_in 'discount', with: '10'
-		fill_in 'note', with: 'thank you for your business'
+		visit new_invoice_path
+		select client.first_name, from: 'invoice_client_id'
+		fill_in 'invoice_number', with: '11'
+		fill_in 'invoice_date_of_issue', with: Time.now
+		fill_in 'invoice_po_number', with: '1'
+		fill_in 'invoice_discount', with: '10'
+		fill_in 'invoice_note', with: 'thank you for your business'
 	end
 end
