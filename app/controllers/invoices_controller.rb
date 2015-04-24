@@ -3,5 +3,6 @@ class InvoicesController < ApplicationController
   end
 
   def new
+  	@invoice = Invoice.new
   end
 end
