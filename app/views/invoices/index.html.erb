@@ -142,7 +142,9 @@
         </div>
 
         <div class="col-md-3">
-            <a class="btn btn-block btn-success" href="invoice-create.html" role="button"><i class="fa fa-check"></i> Create Invoice</a>
+            <%= link_to new_invoice_path, class: 'btn btn-block btn-success', role: 'button' do %>
+              <i class="fa fa-check"></i> Create Invoice
+            <% end %>
         </div>
     </div>
 </section>
