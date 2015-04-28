@@ -89,42 +89,28 @@
                                   </tr>
                               </thead>
                               <tbody>
+                                <div id="item_container">
                                   <tr>
-                                      <td><input type="number" id="input" class="form-control qty-input" required></td>
-                                      <td>
-                                          <select name="" id="input" class="form-control">
-                                              <option value="">hours</option>
-                                              <option value="">service</option>
-                                              <option value="">product</option>
-                                              <option value="">days</option>
-                                              <option value="">deposit</option>
-                                              <option value="">expenses</option>
-                                          </select>
-                                      </td>
-                                      <td><textarea class="form-control descr-input" rows="1"></textarea></td>
-                                      <td><input type="text" id="input" class="form-control price-input" required></td>
-                                      <td><div class="line-total">£240.00</div></td>
+                                    <td><input type="number" id="input" class="form-control qty-input" required></td>
+                                    <td>
+                                      <select name="" id="input" class="form-control">
+                                        <option value="">hours</option>
+                                        <option value="">service</option>
+                                        <option value="">product</option>
+                                        <option value="">days</option>
+                                        <option value="">deposit</option>
+                                        <option value="">expenses</option>
+                                      </select>
+                                    </td>
+                                    <td><textarea class="form-control descr-input" rows="1"></textarea></td>
+                                    <td><input type="text" id="input" class="form-control price-input" required></td>
+                                    <td><div class="line-total">£240.00</div></td>
                                   </tr>
-                                  <tr>
-                                      <td><input type="number" id="input" class="form-control qty-input" required></td>
-                                      <td>
-                                          <select name="" id="input" class="form-control">
-                                              <option value="">hours</option>
-                                              <option value="">service</option>
-                                              <option value="">product</option>
-                                              <option value="">days</option>
-                                              <option value="">deposit</option>
-                                              <option value="">expenses</option>
-                                          </select>
-                                      </td>
-                                      <td><textarea class="form-control descr-input" rows="1"></textarea></td>
-                                      <td><input type="text" id="input" class="form-control price-input" required></td>
-                                      <td><div class="line-total">£240.00</div></td>
-                                  </tr>
+                                </div>
                               </tbody>
                               <tfoot>
                                   <tr class="active">
-                                      <td colspan="5"><a class="btn btn-xs btn-success" href="#" role="button"><i class="fa fa-plus"></i>Add Line</a></td>
+                                      <td colspan="5"><a class="btn btn-xs btn-success" id="add_line" href="#" role="button"><i class="fa fa-plus"></i>Add Line</a></td>
                                   </tr>
                               </tfoot>
                           </table>
