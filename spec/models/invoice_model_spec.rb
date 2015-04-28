@@ -4,6 +4,7 @@ describe Invoice do
 	describe 'relations' do
 		it { is_expected.to belong_to :organisation }
 		it { is_expected.to belong_to :client }
+		it { is_expected.to have_many :items }
 	end
 
 	describe 'fields' do
