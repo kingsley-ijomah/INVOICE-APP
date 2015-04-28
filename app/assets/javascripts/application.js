@@ -14,3 +14,5 @@
 
 //= require src/app
 //= require bootstrap-datepicker
+//= require jquery
+//=require jquery_ujs
