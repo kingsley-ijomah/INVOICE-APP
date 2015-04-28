@@ -53,6 +53,7 @@
 
  <!-- Global scripts -->
  <%= javascript_include_tag 'base' %>
+ <%= javascript_include_tag 'invoices' %>
  <!-- Page level plugin scripts -->
  <%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>
  <%= javascript_include_tag 'application' %>
