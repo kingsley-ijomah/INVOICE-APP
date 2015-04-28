@@ -4,6 +4,7 @@ class Invoice
 
 	belongs_to :organisation
 	belongs_to :client
+	has_many :items
 
 	field :number, type: String
 	field :date_of_issue, type: Date
