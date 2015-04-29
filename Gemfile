@@ -1,21 +1,19 @@
 source 'https://rubygems.org'
 
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-
-gem 'mongoid', '~> 4.0.0'
-
-gem 'bson_ext'
-
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+group :development do
+  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+  gem 'rails', '4.2.1'
+  # Use SCSS for stylesheets
+  gem 'sass-rails', '~> 5.0'
+  # Use Uglifier as compressor for JavaScript assets
+  gem 'mongoid', '~> 4.0.0'
+  gem 'bson_ext'
+  gem 'uglifier', '>= 1.3.0'
+  # Use CoffeeScript for .coffee assets and views
+  gem 'coffee-rails', '~> 4.1.0'
+  # See https://github.com/rails/execjs#readme for more supported runtimes
+  # gem 'therubyracer', platforms: :ruby
+end
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -47,39 +45,25 @@ gem 'bootstrap-datepicker-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
   gem 'rspec-rails'
-
   #gem 'pry', '~> 0.10.1'
-
   # provides a binding.pry method for debugging
   gem 'pry-rails', '~> 0.3.4'
-
   # makes it possible to use next to move to next line of code
   gem 'pry-nav', '~> 0.2.4'
-
   # allows use of up and down methods to move to next method in the stack, show all track with show-stack method
   gem 'pry-stack_explorer', '~> 0.4.9.2'
-
-  # specific matchers for mongoid
   gem 'mongoid-rspec', '~> 2.2.0'
-
-  # alternatives to fixtures
   gem 'factory_girl_rails', '~> 4.5.0'
-
-  # used to easily generate fake data: names, addresses, phone numbers, etc.
   gem 'faker', '~> 1.4.3'
-
-  # add selenium driver
   gem 'selenium-webdriver'
 end
 
