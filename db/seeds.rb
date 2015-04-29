@@ -5,3 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+ItemKind.create([{ name: 'hours' }, { name: 'service' }, { name: 'product' }, { name: 'days' }, { name: 'deposit' }, { name: 'expenses' }])
