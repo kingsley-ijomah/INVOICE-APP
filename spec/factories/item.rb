@@ -7,5 +7,6 @@ FactoryGirl.define do
 		price Faker::Commerce.price
 		total 20
 		association :invoice, factory: :invoice
+		association :item_kind, factory: :item_kind
   end
 end
