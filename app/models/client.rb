@@ -3,7 +3,7 @@ class Client
 	include Mongoid::Timestamps
 
 	belongs_to :organisation
-	# has_many :invoices
+	has_many :invoices
 
 	validates :contact_type, presence: true
   validates :first_name, presence: true
