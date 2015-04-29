@@ -3,6 +3,7 @@ require 'rails_helper'
 describe Client do 
 	describe 'relations' do
 		it { is_expected.to belong_to :organisation }
+		it { is_expected.to have_many :invoices }
 	end
 
 	describe 'fields' do
