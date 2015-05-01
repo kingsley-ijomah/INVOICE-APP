@@ -15,6 +15,9 @@ class InvoicesController < ApplicationController
   	end
   end
 
+  def show
+  end
+
   private
 
   def invoice_params
