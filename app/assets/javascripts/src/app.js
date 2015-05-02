@@ -434,3 +434,6 @@ $(window).resize(function() {
     app.chartJs();
 
 });
+
+
+
