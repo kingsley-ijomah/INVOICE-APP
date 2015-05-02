@@ -58,7 +58,10 @@
  <%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>
  <%= javascript_include_tag 'application' %>
  <%= yield :javascript %>
- 
+
+</body>
+</html>
+
  <script type="text/javascript">
 $('#invoice_date_of_issue').datepicker({
     format: "dd/mm/yyyy",
@@ -68,6 +71,3 @@ $('#invoice_date_of_issue').datepicker({
     todayHighlight: true
 });
 </script>
-
-</body>
-</html>
