@@ -1,6 +1,10 @@
 	require 'rails_helper'
 
 describe Invoice do 
+	describe 'nested attributes' do 
+		it { should accept_nested_attributes_for :items }
+	end
+
 	describe 'relations' do
 		it { is_expected.to belong_to :organisation }
 		it { is_expected.to belong_to :client }
