@@ -5,6 +5,8 @@ class Invoice
 	belongs_to :organisation
 	belongs_to :client
 	has_many :items
+	
+	accepts_nested_attributes_for :items
 
 	field :number, type: String
 	field :date_of_issue, type: Date
