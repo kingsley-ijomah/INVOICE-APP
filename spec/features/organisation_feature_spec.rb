@@ -22,9 +22,9 @@ feature 'Organisation' do
 			click_button 'Create Organisation'
 		}.to change(Organisation, :count).by(0)
 
-		expect(page).to have_content("Name can't be blank")
-		expect(page).to have_content("Street 1 can't be blank")
-		expect(page).to have_content("City can't be blank")
-		expect(page).to have_content("Town can't be blank")
+		expect(page.find('#validation-errors')).to have_content("Name can't be blank")
+		expect(page.find('#validation-errors')).to have_content("Street 1 can't be blank")
+		expect(page.find('#validation-errors')).to have_content("City can't be blank")
+		expect(page.find('#validation-errors')).to have_content("Town can't be blank")
 	end
 end

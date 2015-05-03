@@ -14,7 +14,7 @@ feature "User creates account" do
       click_button 'Sign up'
      
 	 	 	expect(current_path).to eq(root_path)
-      expect(page).to have_content('Welcome! You have signed up successfully.')
+      expect(page.find('.notice')).to have_content('Welcome! You have signed up successfully.')
   end
 
   scenario 'click Login in' do 

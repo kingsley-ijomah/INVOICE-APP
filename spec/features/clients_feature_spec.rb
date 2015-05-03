@@ -29,12 +29,12 @@ feature 'Client' do
 		}.to change(Client, :count).by(1)
 
 		@last_created = Client.last
-
-		expect(page).to have_content @last_created.first_name
-		expect(page).to have_content @last_created.last_name
-		expect(page).to have_content @last_created.email
-		expect(page).to have_content @last_created.tel
-		expect(page).to have_content @last_created.organisation.name
+		
+		expect(page.find('.client-row')).to have_content @last_created.first_name
+		expect(page.find('.client-row')).to have_content @last_created.last_name
+		expect(page.find('.client-row')).to have_content @last_created.email
+		expect(page.find('.client-row')).to have_content @last_created.tel
+		expect(page.find('.client-row')).to have_content @last_created.organisation.name
 	end
 
 	scenario 'create invalid client' do
@@ -42,11 +42,11 @@ feature 'Client' do
 			visit new_client_path
 			click_button 'Save Client'
 		}.to change(Client, :count).by(0)
-
-		expect(page).to have_content("First name can't be blank")
-		expect(page).to have_content("Last name can't be blank")
-		expect(page).to have_content("Email can't be blank")
-		expect(page).to have_content("Tel can't be blank")
+		
+		expect(page.find('#validation-errors')).to have_content("First name can't be blank")
+		expect(page.find('#validation-errors')).to have_content("Last name can't be blank")
+		expect(page.find('#validation-errors')).to have_content("Email can't be blank")
+		expect(page.find('#validation-errors')).to have_content("Tel can't be blank")
 	end
 
 	scenario 'edit client' do
@@ -58,9 +58,11 @@ feature 'Client' do
 		fill_in 'first-name', with: 'john'
 		fill_in 'last-name', with: 'doe'
 		click_button 'Save Client'
-	
-		expect(page).to have_content 'john'
-		expect(page).to have_content 'doe'
+		
+		expect(page.find('.client-row')).to have_content 'john'
+		expect(page.find('.client-row')).to have_content 'doe'
+
+
 	end
 
 	scenario 'delete client' do 
