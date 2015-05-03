@@ -6,10 +6,11 @@
         </div>
     </div>
     <div class="panel-body">
-      
-      <% @organisation.errors.full_messages.each do |msg| %>
-        <p class="text-danger"><%= msg %> </p>
-      <% end %>
+      <div id="validation-errors">
+        <% @organisation.errors.full_messages.each do |msg| %>
+          <p class="text-danger"><%= msg %> </p>
+        <% end %>
+      </div>
 
       <%= form_for @organisation do |f| %>
         <div class="row">

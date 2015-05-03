@@ -25,7 +25,7 @@
 
                         <tbody>
                             <% @clients.each do | client | %>
-                            <tr>
+                            <tr class="client-row">
                                 <td><a href="#" class="text-link"><%= client.organisation.name %></a></td>
                                 <td><%= client.first_name %></td>
                                 <td><%= client.last_name %></td>
