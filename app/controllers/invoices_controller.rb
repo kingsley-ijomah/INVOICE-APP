@@ -8,7 +8,7 @@ class InvoicesController < ApplicationController
 
   def create
   	@invoice = Invoice.new(invoice_params)
-    
+  
   	if @invoice.save
   		redirect_to invoices_path
   	else
@@ -29,7 +29,8 @@ class InvoicesController < ApplicationController
       :date_of_issue, 
       :po_number, 
       :discount, 
-      :note, 
-      :items_attributes => [:qty])
+      :note,
+      :item_attributes => [:qty, :description, :item_kind_id, :price]
+    )
   end
 end
