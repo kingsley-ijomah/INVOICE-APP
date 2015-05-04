@@ -14,7 +14,10 @@ Rails.application.routes.draw do
   }
 
   resources :dashboard, :clients, :organisations
-  resources :invoices, :items
+  
+  resources :invoices do 
+    resources :items
+  end
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
