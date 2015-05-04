@@ -1,9 +1,10 @@
+<% number = 1 %>
 <tr>
-  <%= fields_for 'invoice[items][]', Item.new, index: 0 do |ff| %>
+  <%= fields_for 'invoice[items][]', Item.new, index: number do |ff| %>
     <td><%= ff.number_field("qty", class: 'form-control qty-input', value: 1) %></td>
     <td><%= ff.select("item_kind_id", ItemKind.all.collect { |p| [ p.name, p.id ] }, {}, class: 'form-control') %></td>
     <td><%= ff.text_area("description", class: 'form-control descr-input', rows: 1) %></td>
-    <td><%= ff.text_field("price", class: 'form-control price-input', value: 1, required: true) %></td>
+    <td><%= ff.text_field("price", class: 'form-control price-input', required: true) %></td>
     <td><div class="line-total">£0.00</div></td>
   <% end %>
 </tr>
