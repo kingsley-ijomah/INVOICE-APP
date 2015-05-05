@@ -1,6 +1,5 @@
-<% number = 1 %>
 <tr>
-  <%= fields_for 'invoice[items][]', Item.new, index: number do |ff| %>
+  <%= fields_for 'invoice[items][]', Item.new, index: Item.new.id do |ff| %>
     <td><%= ff.number_field("qty", class: 'form-control qty-input', value: 1) %></td>
     <td><%= ff.select("item_kind_id", ItemKind.all.collect { |p| [ p.name, p.id ] }, {}, class: 'form-control') %></td>
     <td><%= ff.text_area("description", class: 'form-control descr-input', rows: 1) %></td>
