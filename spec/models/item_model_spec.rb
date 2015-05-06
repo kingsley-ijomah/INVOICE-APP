@@ -9,4 +9,13 @@ describe Item do
 	describe 'fields' do
 		it { is_expected.to have_fields(:qty, :kind, :description, :price, :total, :invoice_id, :item_kind_id)}
 	end
+
+	describe '#index_increment method' do
+		it 'result should increase with each call' do
+			count = Item.index_increment
+			expect(Item.index_increment).to eq count + 1
+			expect(Item.index_increment).to eq count + 2
+			expect(Item.index_increment).to eq count + 3
+		end
+	end
 end
