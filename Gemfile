@@ -35,6 +35,8 @@ gem 'kaminari'
 gem 'compass', '~> 1.0.3'
 gem 'bootstrap-datepicker', '~> 1.2.0'
 gem 'bootstrap-datepicker-rails'
+gem 'font-awesome-rails'
+gem 'simple-line-icons-rails', '~> 0.0.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
