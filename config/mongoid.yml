@@ -106,5 +106,3 @@ production:
       uri: <%= ENV['MONGOHQ_URL'] %>
       options:
           max_retries: 20
-          persist_in_safe_mode: true
-          skip_version_check: true
