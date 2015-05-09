@@ -31,7 +31,7 @@ RSpec.describe InvoicesController, type: :controller do
 
       post 'create', invoice: attributes
 
-      expect(response).to redirect_to invoices_path
+      expect(response).to redirect_to invoice_path(double_invoice)
       spy_new_save(model: Invoice, attributes: attributes, double: double_invoice) 
     end
 
