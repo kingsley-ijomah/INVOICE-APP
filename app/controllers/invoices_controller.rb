@@ -10,7 +10,7 @@ class InvoicesController < ApplicationController
   	@invoice = Invoice.new(invoice_params)
  
   	if @invoice.save
-  		redirect_to invoices_path
+  		redirect_to invoice_path(@invoice)
   	else
   		render 'new'
   	end
