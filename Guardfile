@@ -1,4 +1,6 @@
-# A sample Guardfile
+
+# Notify on all tmux clients
+#  display_on_all_clients: false, A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
 ## Uncomment and set this to only include directories you want to watch
