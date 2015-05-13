@@ -45,7 +45,8 @@ module InvoiceApp
                                  'maps.css',
                                  'clients.css',
                                  'invoices.css',
-                                 'invoices-new.css'
+                                 'invoices-new.css',
+                                 'invoices-show.css'
                                 ]
     #controller js assets
     config.assets.precompile += [
