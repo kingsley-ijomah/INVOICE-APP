@@ -71,6 +71,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'guard-rspec'
   gem 'rb-fsevent' if `uname` =~ /Darwin/
+  gem 'tmuxinator'
 end
 
 group :test do 
