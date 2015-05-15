@@ -2,7 +2,6 @@ require 'rails_helper'
 include SharedMockSpecHelper
 
 RSpec.describe InvoicesController, type: :controller do
-
   describe "GET #index" do
     it "returns http success" do
       get :index
