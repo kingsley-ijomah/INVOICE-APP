@@ -10,14 +10,13 @@ class InvoicesController < ApplicationController
   	@invoice = Invoice.new(invoice_params)
 
   	if @invoice.save
-      redirect_to invoice_path(@invoice)
+      redirect_to invoice_url(@invoice)
   	else
   		render 'new'
   	end
   end
 
   def show
-    binding.pry
     @invoice = Invoice.find(params[:id])
   end
 
@@ -33,17 +32,7 @@ class InvoicesController < ApplicationController
       :po_number, 
       :discount, 
       :note,
+      {items: [:qty, :description, :item_kind_id, :price]}
     )
-  	# params.require(:invoice).permit(
-      # :id,
-      # :client_id, 
-      # :organisation_id, 
-      # :number, 
-      # :date_of_issue, 
-      # :po_number, 
-      # :discount, 
-      # :note,
-      # {items: [:qty, :description, :item_kind_id, :price]}
-    # )
   end
 end
