@@ -1,230 +1,230 @@
 <section id="main-wrapper" class="theme-default">
-    <!--main content start-->
-    <section class="main-content-wrapper">
-        <div class="row action-row">
-          <div class="col-md-5"><h1 class="invoice_no">Invoice: #000001</h1></div>
-            <div class="col-md-7">
-                <div class="clearfix">
-                    <div class="pull-right">
-                        <a class="btn btn-sm btn-success" href="enter-payment.html" data-toggle="modal" data-target=".load-enter-payment" role="button">
-                            Enter Payment
-                        </a>
-                        <a class="btn btn-sm btn-success" href="#" data-toggle="modal" data-target=".bs-example-modal-md" role="button">Send Invoice</a>
-                        <a class="btn btn-sm btn-default" href="invoice-create.html" role="button">Edit</a>
-                    </div>
-                </div>
-            </div>
+  <!--main content start-->
+  <section class="main-content-wrapper">
+    <div class="row action-row">
+      <div class="col-md-5"><h1 class="invoice_no">Invoice: <%= @invoice.number %></h1></div>
+      <div class="col-md-7">
+        <div class="clearfix">
+          <div class="pull-right">
+            <a class="btn btn-sm btn-success" href="enter-payment.html" data-toggle="modal" data-target=".load-enter-payment" role="button">
+              Enter Payment
+            </a>
+            <a class="btn btn-sm btn-success" href="#" data-toggle="modal" data-target=".bs-example-modal-md" role="button">Send Invoice</a>
+            <a class="btn btn-sm btn-default" href="invoice-create.html" role="button">Edit</a>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-md">
-            <div class="modal-content">
-              <p>
-                    You are about to send invoice #000001 to
-                    <b>KOCO Company.</b><br>
-                    Please confirm or cancel below to complete transaction.
-              </p>
+    <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-md">
+        <div class="modal-content">
+          <p>
+          You are about to send invoice <%= @invoice.number %> to
+          <b>KOCO Company.</b><br>
+          Please confirm or cancel below to complete transaction.
+          </p>
 
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-success">Confirm</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade load-enter-payment" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+
+        </div>
+      </div>
+    </div>
+
+    <div id="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="invoice_status text-muted text-center status-well">draft</div>
+          <div class="invoice_status hidden text-muted text-center status-well">sent</div>
+          <div class="invoice_status hidden text-muted text-center status-well">viewed</div>
+          <div class="invoice_status hidden text-success text-center status-well">paid</div>
+          <div class="invoice_status hidden text-warning text-center status-well">partial</div>
+          <div class="invoice_status hidden text-danger text-center status-well">overdue</div>
+          <div class="invoice_status hidden text-danger text-center status-well">disputed</div>
+        </div>
+      </div>
+
+      <div class="row sender-details">
+        <div class="col-md-8">
+          <address>
+            <p>company name</p>
+            <p>address 1</p>
+            <p>city</p>
+            <p>town</p>
+            <p>postcode</p>
+          </address>
+        </div>
+        <div class="col-md-4">
+          <div id="logo">Company Logo</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="client-address">
+            <p>client company name</p>
+            <p>address 1</p>
+            <p>city</p>
+            <p>town</p>
+            <p>postcode</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <table class="table summary">
+            <tbody>
+            <tr>
+              <td>Invoice #</td>
+              <td id="invoice_number"><%= @invoice.number %></td>
+            </tr>
+            <tr>
+              <td>Invoice Date</td>
+              <td id="invoice_date"><%= @invoice.date_of_issue.to_formatted_s(:short) %></td>
+            </tr>
+            <tr>
+              <td>PO #</td>
+              <td id="po"><%= @invoice.po_number %></td>
+            </tr>
+            <tfoot>
+              <tr class="active">
+                <td>Amount Due</td>
+                <td>£0.00 GBP</td>
+              </tr>
+            </tfoot>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table" id="items">
+            <thead>
+              <tr class="active">
+                <th>Task</th>
+                <th>Entry Notes</th>
+                <th class="text-center">Rate</th>
+                <th class="text-center">Qty</th>
+                <th class="text-center">Kind</th>
+                <th class="text-center">Line Total</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Coding</td>
+              <td class="item_name"><%= @invoice.item.kind %></td>
+              <td class="item_note text-center">100</td>
+              <td class="item_qty text-center">8</td>
+              <td class="item_kind text-center">hours</td>
+              <td class="line_total text-center">800</td>
+            </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4"></td>
+                <td class="text-right">Total</td>
+                <td class="text-center"><b>£800.00 GBP</b></td>
+              </tr>
+              <tr>
+                <td colspan="4"></td>
+                <td class="text-right">Amount Paid</td>
+                <td class="text-center">£800.00 GBP</td>
+              </tr>
+              <tr>
+                <td colspan="4"></td>
+                <td class="text-right">Amount Due</td>
+                <td class="text-center active"><b>£0.00 GBP</b></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <aside>
+            <p><b>Terms</b></p>
+            <p>Please make payments to:</p><br>
+            <p>
+            COMPANY NAME <br>
+            Acc. ### ### <br>
+            Sort. ##-##-##
+            </p>
+          </aside>
+        </div>
+      </div>
+
+      <div class="row">
+        <p class="powered text-center">This invoice system is powered by <b>KOCO</b></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div id="autobiography">
+          <div class="well well-sm">
+            <h4>Invoice autobiography</h4>
+
+            <div class="complete-row">
+              <hr>
+              <div class="row bio-row">
+                <div class="col-md-1"><span class="label label-default">Created</span></div>
+                <div class="col-md-8 bio-status">Created by you.</div>
+                <div class="col-md-3 bio-date text-right">30 Mar 2015, 7:04 AM</div>
               </div>
             </div>
+
+            <div class="complete-row">
+              <hr>
+              <div class="row bio-row">
+                <div class="col-md-1"><span class="label label-default">Updated</span></div>
+                <div class="col-md-8 bio-status">Updated by you.</div>
+                <div class="col-md-3 bio-date text-right">30 Mar 2015, 7:04 AM</div>
+              </div>
+            </div>
+
+            <div class="complete-row">
+              <hr>
+              <div class="row bio-row">
+                <div class="col-md-1"><span class="label label-default">Sent</span></div>
+                <div class="col-md-8 bio-status">Sent by you.</div>
+                <div class="col-md-3 bio-date text-right">30 Mar 2015, 7:04 AM</div>
+              </div>
+            </div>
+
+            <div class="complete-row">
+              <hr>
+              <div class="row bio-row">
+                <div class="col-md-1"><span class="label label-default">Viewed</span></div>
+                <div class="col-md-8 bio-status">Viewed by John</div>
+                <div class="col-md-3 bio-date text-right">30 Mar 2015, 7:04 AM</div>
+              </div>
+            </div>
+
+            <div class="complete-row">
+              <hr>
+              <div class="row bio-row">
+                <div class="col-md-1"><span class="label label-default">Payment</span></div>
+                <div class="col-md-8 bio-status">Payment added by you. £9,740.00 of £9,740.00</div>
+                <div class="col-md-3 bio-date text-right">30 Mar 2015, 7:04 AM</div>
+              </div>
+            </div>
+
           </div>
         </div>
-
-        <div class="modal fade load-enter-payment" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-
-                
-            </div>
-          </div>
-        </div>
-
-        <div id="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="invoice_status text-muted text-center status-well">draft</div>
-                    <div class="invoice_status hidden text-muted text-center status-well">sent</div>
-                    <div class="invoice_status hidden text-muted text-center status-well">viewed</div>
-                    <div class="invoice_status hidden text-success text-center status-well">paid</div>
-                    <div class="invoice_status hidden text-warning text-center status-well">partial</div>
-                    <div class="invoice_status hidden text-danger text-center status-well">overdue</div>
-                    <div class="invoice_status hidden text-danger text-center status-well">disputed</div>
-                </div>
-            </div>
-
-            <div class="row sender-details">
-                <div class="col-md-8">
-                    <address>
-                        <p>company name</p>
-                        <p>address 1</p>
-                        <p>city</p>
-                        <p>town</p>
-                        <p>postcode</p>
-                    </address>
-                </div>
-                <div class="col-md-4">
-                    <div id="logo">Company Logo</div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="client-address">
-                        <p>client company name</p>
-                        <p>address 1</p>
-                        <p>city</p>
-                        <p>town</p>
-                        <p>postcode</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <table class="table summary">
-                        <tbody>
-                            <tr>
-                                <td>Invoice #</td>
-                                <td id="inoice_number">0000001</td>
-                            </tr>
-                            <tr>
-                                <td>Invoice Date</td>
-                                <td id="invoice_date">January 4, 2014</td>
-                            </tr>
-                            <tr>
-                                <td>PO #</td>
-                                <td id="po">Dec. Invoice</td>
-                            </tr>
-                            <tfoot>
-                                <tr class="active">
-                                    <td>Amount Due</td>
-                                    <td>£0.00 GBP</td>
-                                </tr>
-                            </tfoot>
-                        </tbody>
-                    </table>
-
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <table class="table" id="items">
-                        <thead>
-                            <tr class="active">
-                                <th>Task</th>
-                                <th>Entry Notes</th>
-                                <th class="text-center">Rate</th>
-                                <th class="text-center">Qty</th>
-                                <th class="text-center">Kind</th>
-                                <th class="text-center">Line Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Coding</td>
-                                <td class="item_name">20 days of coding</td>
-                                <td class="item_note text-center">100</td>
-                                <td class="item_qty text-center">8</td>
-                                <td class="item_kind text-center">hours</td>
-                                <td class="line_total text-center">800</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="4"></td>
-                                <td class="text-right">Total</td>
-                                <td class="text-center"><b>£800.00 GBP</b></td>
-                            </tr>
-                            <tr>
-                                <td colspan="4"></td>
-                                <td class="text-right">Amount Paid</td>
-                                <td class="text-center">£800.00 GBP</td>
-                            </tr>
-                            <tr>
-                                <td colspan="4"></td>
-                                <td class="text-right">Amount Due</td>
-                                <td class="text-center active"><b>£0.00 GBP</b></td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <aside>
-                        <p><b>Terms</b></p>
-                        <p>Please make payments to:</p><br>
-                        <p>
-                            COMPANY NAME <br>
-                            Acc. ### ### <br>
-                            Sort. ##-##-##
-                        </p>
-                    </aside>
-                </div>
-            </div>
-
-            <div class="row">
-                <p class="powered text-center">This invoice system is powered by <b>KOCO</b></p>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-12">
-                <div id="autobiography">
-                    <div class="well well-sm">
-                        <h4>Invoice autobiography</h4>
-
-                        <div class="complete-row">
-                            <hr>
-                            <div class="row bio-row">
-                                <div class="col-md-1"><span class="label label-default">Created</span></div>
-                                <div class="col-md-8 bio-status">Created by you.</div>
-                                <div class="col-md-3 bio-date text-right">30 Mar 2015, 7:04 AM</div>
-                            </div>
-                        </div>
-
-                        <div class="complete-row">
-                            <hr>
-                            <div class="row bio-row">
-                                <div class="col-md-1"><span class="label label-default">Updated</span></div>
-                                <div class="col-md-8 bio-status">Updated by you.</div>
-                                <div class="col-md-3 bio-date text-right">30 Mar 2015, 7:04 AM</div>
-                            </div>
-                        </div>
-
-                        <div class="complete-row">
-                            <hr>
-                            <div class="row bio-row">
-                                <div class="col-md-1"><span class="label label-default">Sent</span></div>
-                                <div class="col-md-8 bio-status">Sent by you.</div>
-                                <div class="col-md-3 bio-date text-right">30 Mar 2015, 7:04 AM</div>
-                            </div>
-                        </div>
-
-                        <div class="complete-row">
-                            <hr>
-                            <div class="row bio-row">
-                                <div class="col-md-1"><span class="label label-default">Viewed</span></div>
-                                <div class="col-md-8 bio-status">Viewed by John</div>
-                                <div class="col-md-3 bio-date text-right">30 Mar 2015, 7:04 AM</div>
-                            </div>
-                        </div>
-
-                        <div class="complete-row">
-                            <hr>
-                            <div class="row bio-row">
-                                <div class="col-md-1"><span class="label label-default">Payment</span></div>
-                                <div class="col-md-8 bio-status">Payment added by you. £9,740.00 of £9,740.00</div>
-                                <div class="col-md-3 bio-date text-right">30 Mar 2015, 7:04 AM</div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--main content end-->
+      </div>
+    </div>
+  </section>
+  <!--main content end-->
 </section>
