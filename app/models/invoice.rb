@@ -7,7 +7,7 @@ class Invoice
 	has_many :items
 
 	field :number, type: String
-	field :date_of_issue, type: Date
+	field :date_of_issue, type: DateTime
 	field :po_number, type: String
 	field :discount, type: Integer
 	field :note, type: String
