@@ -4,7 +4,7 @@ class Invoice
 
 	belongs_to :organisation
 	belongs_to :client
-	has_many :items
+	has_many :items, autosave: true
 
 	field :number, type: String
 	field :date_of_issue, type: DateTime
