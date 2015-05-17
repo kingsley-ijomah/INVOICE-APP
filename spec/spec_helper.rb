@@ -23,7 +23,8 @@ require 'require_all'
 
 require_rel 'support'
 require_rel 'helpers'
-
+require 'capybara'
+require 'capybara/dsl'
 
 RSpec.configure do |config|
 
