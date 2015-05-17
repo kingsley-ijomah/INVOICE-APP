@@ -14,6 +14,7 @@ feature Invoice do
     @date = DateTime.now.beginning_of_day
 		@item_qty = 3
 		@note = 'thank you for your business'
+    @description = 'A month of coding'
 
 		visit new_invoice_path
 		
@@ -28,7 +29,7 @@ feature Invoice do
 
     fill_in 'invoice_items_0_qty', with: @item_qty
     select @item_kind_name, from: 'invoice_items_0_item_kind_id'
-    fill_in 'invoice_items_0_description', with: 'A month of coding'
+    fill_in 'invoice_items_0_description', with: @description
     fill_in 'invoice_items_0_price', with: 3000
     click_button 'Save Draft'
 
@@ -37,9 +38,9 @@ feature Invoice do
 		expect(page.find('#invoice_number')).to have_content(11)
     expect(page.find('#invoice_date')).to have_content(@date.to_formatted_s(:short))
 		expect(page.find('#po')).to have_content(88787)
-    expect(page.find('.item_name')).to have_content(@item_kind_name)
-		# expect(page.find('.item_qty')).to have_content(@item_qty)
-		# expect(page.find('.item_kind')).to have_content(item_kind_name)
+    expect(page.find('.description')).to have_content(@description)
+		expect(page.find('.item_qty')).to have_content(@item_qty)
+		expect(page.find('.item_kind')).to have_content(@item_kind_name)
 		# expect(page.find('.line_total')).to have_content(item_kind_name)
 	end
 end
