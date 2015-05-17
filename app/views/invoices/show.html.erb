@@ -124,10 +124,10 @@
             <% @invoice.items.each do |item| %>
               <tr>
                 <td>Coding</td>
-                <td class="item_name"><%= item.item_kind.name %></td>
+                <td class="description"><%= item.description %></td>
                 <td class="item_note text-center">100</td>
-                <td class="item_qty text-center">8</td>
-                <td class="item_kind text-center">hours</td>
+                <td class="item_qty text-center"><%= item.qty %></td>
+                <td class="item_kind text-center"><%= item.item_kind.name %></td>
                 <td class="line_total text-center">800</td>
               </tr>
             <% end %>
