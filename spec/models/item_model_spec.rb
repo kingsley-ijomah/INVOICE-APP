@@ -7,7 +7,7 @@ describe Item do
 	end
 
 	describe 'fields' do
-		it { is_expected.to have_fields(:qty, :kind, :description, :price, :total, :invoice_id, :item_kind_id)}
+		it { is_expected.to have_fields(:qty, :description, :price, :total, :invoice_id, :item_kind_id)}
 	end
 
 	describe '#index_increment method' do
