@@ -3,9 +3,9 @@ require 'rails_helper'
 feature 'Organisation' do
 	scenario 'create valid organisation' do 
 		visit new_organisation_path
-		expect {
+      @company = Faker::Company.name
 			within '#organisaton_form' do
-				fill_in 'company-name', with: Faker::Company.name
+				fill_in 'company-name', with: @company
 				fill_in 'street_1', with: Faker::Address.street_name
 				fill_in 'street_2', with: Faker::Address.secondary_address
 				fill_in 'city', with: Faker::Address.city
@@ -13,7 +13,7 @@ feature 'Organisation' do
 				fill_in 'post-code', with: Faker::Address.postcode
 			end
 			click_button 'Create Organisation'
-		}.to change(Organisation, :count).by(1)
+      expect(page.find('#client_organisation_id')).to have_content(@company)
 	end
 
 	scenario 'create invalid organisation' do
