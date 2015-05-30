@@ -7,5 +7,6 @@ FactoryGirl.define do
 		note Faker::Lorem.sentence
 		association :client, factory: :client
 		association :organisation, factory: :organisation
+    association :company, factory: :company
 	end
 end
