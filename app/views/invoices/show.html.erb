@@ -58,11 +58,12 @@
       <div class="row sender-details">
         <div class="col-md-8">
           <address>
-            <p>company name</p>
-            <p>address 1</p>
-            <p>city</p>
-            <p>town</p>
-            <p>postcode</p>
+            <p id="company_name"><%= current_user.company.name %></p>
+            <p id="company_street_1"><%= current_user.company.street_1 %></p>
+            <p id="company_street_2"><%= current_user.company.street_2 %></p>
+            <p id="company_town"><%= current_user.company.town %></p>
+            <p id="company_city"><%= current_user.company.city %></p>
+            <p id="company_postcode"><%= current_user.company.post_code %></p>
           </address>
         </div>
         <div class="col-md-4">
