@@ -9,6 +9,7 @@ feature "User creates account" do
     visit new_user_registration_path
 
     within "#new_user" do
+      select Company.first.name, from: "user_company_id"
       fill_in 'user_name', with: 'kingsley'
       fill_in 'user_email', with: 'kingsley3@test.com'
       fill_in 'user_password', with: 'thisisthetestsubmit'
