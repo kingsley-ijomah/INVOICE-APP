@@ -21,14 +21,30 @@ require 'rubygems'
 
 require 'require_all'
 
-require_rel 'support'
-require_rel 'helpers'
 require 'capybara'
 require 'capybara/dsl'
+require 'devise'
+
+require_rel 'support'
+require_rel 'helpers'
+require_rel 'lib'
 
 RSpec.configure do |config|
-
   Capybara.javascript_driver = :webkit
+
+  config.include Devise::TestHelpers, :type => :controller
+
+  config.include RspecAuthHelper::SessionHelper, :type => :controller
+  config.include RspecAuthHelper::WardenHelper, :type => :feature
+
+  #login user for all controller spec methods
+  config.before(type: :controller) do
+    login_user
+  end
+
+  config.before(type: :feature) do
+    login_user
+  end
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -53,8 +69,8 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-# The settings below are suggested to provide a good initial experience
-# with RSpec, but feel free to customize to your heart's content.
+  # The settings below are suggested to provide a good initial experience
+  # with RSpec, but feel free to customize to your heart's content.
 =begin
   # These two settings work together to allow you to limit a spec run
   # to individual examples or groups you care about by tagging them with
