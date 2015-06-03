@@ -41,7 +41,12 @@ feature Invoice do
     expect(page.find('.description')).to have_content(@description)
 		expect(page.find('.item_qty')).to have_content(@item_qty)
 		expect(page.find('.item_kind')).to have_content(@item_kind_name)
-    # expect(page.find('#company_name')).to have_content(Invoice.last.company.name)
+    expect(page.find('#company_name')).to have_content(Company.first.name)
+    expect(page.find('#company_street_1')).to have_content(Company.first.street_1)
+    expect(page.find('#company_street_2')).to have_content(Company.first.street_2)
+    expect(page.find('#company_town')).to have_content(Company.first.town)
+    expect(page.find('#company_city')).to have_content(Company.first.city)
+    expect(page.find('#company_postcode')).to have_content(Company.first.post_code)
 		# expect(page.find('.line_total')).to have_content(item_kind_name)
 	end
 end
