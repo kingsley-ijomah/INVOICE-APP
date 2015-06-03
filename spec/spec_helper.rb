@@ -42,7 +42,7 @@ RSpec.configure do |config|
     login_user
   end
 
-  config.before(type: :feature) do
+  config.before(type: :feature) do 
     login_user
   end
 

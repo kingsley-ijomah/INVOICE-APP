@@ -36,4 +36,10 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
   config.include Capybara::DSL
+
+
+  config.before(:each, js: true) do
+    # Disable any external js for integration tests
+    page.driver.block_unknown_urls
+  end
 end
