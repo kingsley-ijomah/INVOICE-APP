@@ -15,4 +15,6 @@ class Company
   field :post_code, type: String
 
   has_many :invoices
+  has_many :users
+
 end
