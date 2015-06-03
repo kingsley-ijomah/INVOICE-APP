@@ -6,6 +6,9 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :name, presence: true
+  validates :company_id, presence: true
+
+  belongs_to :company
 
   ## Database authenticatable
   field :name,              type: String, default: ""
