@@ -6,5 +6,6 @@ FactoryGirl.define do
     email Faker::Internet.email
     password pass
     password_confirmation pass
+    association :company, factory: :company
   end
 end
