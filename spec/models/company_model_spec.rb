@@ -11,5 +11,6 @@ describe Company do
 
   describe 'relations' do
   	it { is_expected.to have_many(:invoices).with_foreign_key(:company_id) }
+  	it { is_expected.to have_many(:users).with_foreign_key(:company_id) }
   end
 end
