@@ -74,11 +74,12 @@
       <div class="row">
         <div class="col-md-8">
           <div class="client-address">
-            <p>client company name</p>
-            <p>address 1</p>
-            <p>city</p>
-            <p>town</p>
-            <p>postcode</p>
+            <p id="org_name"><%= @invoice.client.organisation.name %></p>
+            <p id="org_street_1"><%= @invoice.client.organisation.street_1 %></p>
+            <p id="org_street_2"><%= @invoice.client.organisation.street_2 %></p>
+            <p id="org_town"><%= @invoice.client.organisation.town %></p>
+            <p id="org_city"><%= @invoice.client.organisation.city %></p>
+            <p id="org_postcode"><%= @invoice.client.organisation.post_code %></p>
           </div>
         </div>
         <div class="col-md-4">
