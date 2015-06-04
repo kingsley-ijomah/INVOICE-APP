@@ -15,6 +15,7 @@ feature Invoice do
 		@item_qty = 3
 		@note = 'thank you for your business'
     @description = 'A month of coding'
+    @terms = 'Please pay on receipt'
 
 		visit new_invoice_path
 		
@@ -26,6 +27,7 @@ feature Invoice do
     fill_in 'invoice_po_number', with: '88787'
     fill_in 'invoice_discount', with: '10'
     fill_in 'invoice_note', with: @note
+    fill_in 'invoice_terms', with: @terms
 
     fill_in 'invoice_items_0_qty', with: @item_qty
     select @item_kind_name, from: 'invoice_items_0_item_kind_id'
@@ -55,6 +57,7 @@ feature Invoice do
     expect(page.find('#org_town')).to have_content(Invoice.last.client.organisation.town)
     expect(page.find('#org_city')).to have_content(Invoice.last.client.organisation.city)
     expect(page.find('#org_postcode')).to have_content(Invoice.last.client.organisation.post_code)
-    
+
+    expect(page.find('#invoice_terms')).to have_content(@terms)
 	end
 end
