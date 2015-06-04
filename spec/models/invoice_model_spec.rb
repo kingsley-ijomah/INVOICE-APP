@@ -8,11 +8,12 @@ describe Invoice do
 	end
 
 	describe 'fields' do
-		it { is_expected.to have_fields(:number, :date_of_issue, :po_number, :discount, :note)}
+		it { is_expected.to have_fields(:number, :date_of_issue, :po_number, :discount, :note, :terms)}
 	end
 
 	describe 'validation' do 
   	it { should validate_presence_of :number }
   	it { should validate_presence_of :date_of_issue }
+  	it { should validate_presence_of :terms }
   end
 end
