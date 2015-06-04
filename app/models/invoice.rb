@@ -12,7 +12,9 @@ class Invoice
 	field :po_number, type: String
 	field :discount, type: Integer
 	field :note, type: String
+  field :terms, type: String
 
 	validates :number, presence: true
   validates :date_of_issue, presence: true
+  validates :terms, presence: true
 end
