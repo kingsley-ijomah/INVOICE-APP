@@ -32,6 +32,7 @@ class InvoicesController < ApplicationController
       :po_number, 
       :discount, 
       :note,
+      :terms,
       {items: [:qty, :description, :item_kind_id, :price]}
     )
   end
