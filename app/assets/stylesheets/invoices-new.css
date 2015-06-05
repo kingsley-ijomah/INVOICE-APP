@@ -2,6 +2,15 @@
 	margin: 20px;
 }
 
+.remove-line {
+  padding-top: 12px;
+  color: #e1e1e1;
+}
+
+.remove-line:hover {
+  color: inherit;
+}
+
 label {
 	font-size: 14px;
 }
@@ -29,7 +38,7 @@ label {
 }
 
 .price-input {
-	max-width: 70px !important;
+	max-width: 75px !important;
 }
 
 .qty-input {
