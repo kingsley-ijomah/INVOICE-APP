@@ -75,6 +75,7 @@
                       <th>Description</th>
                       <th>Price</th>
                       <th>Total</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody id="item-list">
@@ -82,7 +83,7 @@
                   </tbody>
                   <tfoot>
                     <tr class="active">
-                      <td colspan="5">
+                      <td colspan="6">
                         <%= link_to new_invoice_item_path(invoice_id: @invoice.id), class: 'btn btn-xs btn-success', role: 'button', id: 'add_line', remote: true do %>
                           <i class="fa fa-plus"></i>Add Line
                         <% end %>
