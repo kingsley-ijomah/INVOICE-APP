@@ -1,9 +1,14 @@
 <tr>
-  <%= fields_for 'invoice[items][]', Item.new, index: Item.index_increment do |ff| %>
+  <%= fields_for 'invoice[items][]', @item, index: Item.index_increment do |ff| %>
     <td><%= ff.number_field("qty", class: 'form-control qty-input', value: 1) %></td>
     <td><%= ff.select("item_kind_id", ItemKind.all.collect { |p| [ p.name, p.id ] }, {}, class: 'form-control') %></td>
     <td><%= ff.text_area("description", class: 'form-control descr-input', rows: 1) %></td>
     <td><%= ff.text_field("price", class: 'form-control price-input', required: true) %></td>
     <td><div class="line-total">£0.00</div></td>
+    <td>
+      <%= link_to invoice_item_url(id:1), html_options = {remote: true, method: :delete} do %> 
+        <span class="glyphicon glyphicon-remove remove-line" aria-hidden="true"></span> 
+      <% end %>
+    </td>
   <% end %>
 </tr>
