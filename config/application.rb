@@ -58,7 +58,8 @@ module InvoiceApp
                                  'charts.js',
                                  'mail.js',
                                  'maps.js',
-                                 'invoices.js'
+                                 'invoices.js',
+                                 'accounting.js'
           
                                 ]
                                 
