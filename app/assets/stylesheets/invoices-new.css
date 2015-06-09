@@ -99,3 +99,7 @@ ul {
 .invoice-field {
 	width: 140px !important;
 }
+
+#invoice_date_of_issue {
+  width: 140px !important;
+}
