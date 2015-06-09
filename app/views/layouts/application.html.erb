@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Invoice App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Invoice App</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- Favicon -->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
   <script src="assets/js/vendor/html5shiv.js"></script>
   <script src="assets/js/vendor/respond.min.js"></script>
   <![endif]-->
 
-  <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    <!-- Global styles -->
-    <%= stylesheet_link_tag 'base' %>
-    <!-- Page level styles -->
-    <%= stylesheet_link_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.css") %> 
-    <%= stylesheet_link_tag "#{params[:controller]}-#{params[:action]}" if ::Rails.application.assets.find_asset("#{params[:controller]}-#{params[:action]}.css") %> 
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<!-- Global styles -->
+<%= stylesheet_link_tag 'base' %>
+<!-- Page level styles -->
+<%= stylesheet_link_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.css") %> 
+<%= stylesheet_link_tag "#{params[:controller]}-#{params[:action]}" if ::Rails.application.assets.find_asset("#{params[:controller]}-#{params[:action]}.css") %> 
 
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= csrf_meta_tags %>
+<%= stylesheet_link_tag 'application', media: 'all' %>
+<%= csrf_meta_tags %>
 </head>
 <body>
 
@@ -34,40 +34,40 @@
 
   <!--main content start-->
   <section class="main-content-wrapper">
-      <%= render 'shared/page_header' %>
+    <%= render 'shared/page_header' %>
 
-      <% if notice %>
-        <p class="notice"><%= notice %></p>
-      <% end %>
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
 
-      <% if alert %>
-        <p class="alert"><%= alert %></p>
-      <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
 
-      <%= yield %>
+    <%= yield %>
 
   </section>
 </section>
 
 <%= render 'shared/contact_list' %>
 
- <!-- Global scripts -->
- <%= javascript_include_tag 'base' %>
- <%= javascript_include_tag 'invoices' %>
- <!-- Page level plugin scripts -->
- <%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>
- <%= javascript_include_tag 'application' %>
- <%= yield :javascript %>
+<!-- Global scripts -->
+<%= javascript_include_tag 'base' %>
+<!-- Page level plugin scripts -->
+<%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>
+<%= javascript_include_tag 'application' %>
+<%= yield :javascript %>
 
 </body>
 </html>
 
- <script type="text/javascript">
-$('#invoice_date_of_issue').datepicker({
+<script type="text/javascript">
+  $('#invoice_date_of_issue').datepicker({
     format: "dd/mm/yyyy",
     clearBtn: true,
     multidate: false,
     autoclose: true,
     todayHighlight: true
-});
+  });
 </script>
+
