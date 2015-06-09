@@ -435,5 +435,3 @@ $(window).resize(function() {
 
 });
 
-
-
