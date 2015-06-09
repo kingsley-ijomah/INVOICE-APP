@@ -32,8 +32,11 @@ gem 'require_all', '~> 1.3.2'
 gem 'kaminari'
 # date select
 gem 'compass', '~> 1.0.3'
-gem 'bootstrap-datepicker', '~> 1.2.0'
-gem 'bootstrap-datepicker-rails'
+# gem 'bootstrap-datepicker', '~> 1.2.0'
+# gem 'bootstrap-datepicker-rails'
+gem 'momentjs-rails', '>= 2.8.1'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
+
 gem 'font-awesome-rails'
 gem 'simple-line-icons-rails', '~> 0.0.1'
 gem 'rails_12factor', group: :production
