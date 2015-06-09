@@ -15,5 +15,8 @@
 //= require src/app
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-datepicker
+//= require bootstrap/js/bootstrap.min
+//= require navgoco/jquery.navgoco.min
 //= require accounting
+//= require moment
+//= require bootstrap-datetimepicker
