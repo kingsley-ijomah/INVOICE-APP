@@ -5,6 +5,7 @@ FactoryGirl.define do
 		po_number Faker::Number.number(3)
 		discount Faker::Number.number(2)
 		note Faker::Lorem.sentence
+    terms Faker::Lorem.sentence
 		association :client, factory: :client
 		association :organisation, factory: :organisation
     association :company, factory: :company
