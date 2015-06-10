@@ -33,7 +33,7 @@
                                <label>Invoice Number</label>
                                <div class="input-group">
                                  <div class="input-group-addon">#</div>
-                                 <%= f.text_field :number, class: 'form-control invoice-field', required: true %>
+                                 <%= f.text_field :number, class: 'form-control invoice-field', required: true, value: generate_invoice_number  %>
                                </div>
                              </div>
                              </p>
@@ -90,7 +90,8 @@
                            <tfoot>
                              <tr class="active">
                                <td colspan="6">
-                                 <%= link_to new_invoice_item_path(invoice_id: @invoice.id), class: 'btn btn-xs btn-success', role: 'button', id: 'add_line', remote: true do %>
+                                 <%= link_to new_invoice_item_path(invoice_id: @invoice.id), class: 'btn btn-xs btn-success', role: 'button', id: 'add_line', 
+                                   remote: true do %>
                                    <i class="fa fa-plus"></i>Add Line
                                  <% end %>
                                </td>
@@ -158,3 +159,4 @@
            </div>
          </div>
          <!--main content end
+
