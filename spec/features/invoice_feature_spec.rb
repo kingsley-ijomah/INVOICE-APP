@@ -6,19 +6,19 @@ feature Invoice do
 		click_link 'Create Invoice'
 		expect(current_path).to eq new_invoice_path
 	end
-
+ 
 	scenario 'valid invoice', js: true do
 		client = create(:client)
 		item_kind = create(:item_kind)
 		@item_kind_name = item_kind.name
-    @date = DateTime.now.beginning_of_day
+    @date = '06/09/2015 5:46 pm'
 		@item_qty = 3
 		@note = 'thank you for your business'
-    @description = 'A month of coding'
-    @terms = 'Please pay on receipt'
+    @description = 'a month of coding'
+    @terms = 'please pay on receipt'
 
 		visit new_invoice_path
-		
+
     click_link 'add_line'
     
     select client.first_name, from: 'invoice_client_id'
@@ -33,12 +33,13 @@ feature Invoice do
     select @item_kind_name, from: 'invoice_items_0_item_kind_id'
     fill_in 'invoice_items_0_description', with: @description
     fill_in 'invoice_items_0_price', with: 3000
+
     click_button 'Save Draft'
 
     expect(page.find('.invoice_no')).to have_content(11)
 		expect(page.find('.invoice_status')).to have_content('draft')
 		expect(page.find('#invoice_number')).to have_content(11)
-    expect(page.find('#invoice_date')).to have_content(@date.to_formatted_s(:short))
+    expect(page.find('#invoice_date')).to have_content('06 Sep 17:46')
 		expect(page.find('#po')).to have_content(88787)
     expect(page.find('.description')).to have_content(@description)
 		expect(page.find('.item_qty')).to have_content(@item_qty)
@@ -58,6 +59,5 @@ feature Invoice do
     expect(page.find('#org_town')).to have_content(Invoice.last.client.organisation.town)
     expect(page.find('#org_city')).to have_content(Invoice.last.client.organisation.city)
     expect(page.find('#org_postcode')).to have_content(Invoice.last.client.organisation.post_code)
-
 	end
 end
