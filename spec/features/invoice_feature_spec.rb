@@ -22,7 +22,6 @@ feature Invoice do
     click_link 'add_line'
     
     select client.first_name, from: 'invoice_client_id'
-    fill_in 'invoice_number', with: '11'
     fill_in 'invoice_date_of_issue', with: @date
     fill_in 'invoice_po_number', with: '88787'
     fill_in 'invoice_discount', with: '10'
@@ -36,9 +35,9 @@ feature Invoice do
 
     click_button 'Save Draft'
 
-    expect(page.find('.invoice_no')).to have_content(11)
+    expect(page.find('.invoice_no')).to have_content('00001')
 		expect(page.find('.invoice_status')).to have_content('draft')
-		expect(page.find('#invoice_number')).to have_content(11)
+		expect(page.find('#invoice_number')).to have_content('00001')
     expect(page.find('#invoice_date')).to have_content('06 Sep 17:46')
 		expect(page.find('#po')).to have_content(88787)
     expect(page.find('.description')).to have_content(@description)
