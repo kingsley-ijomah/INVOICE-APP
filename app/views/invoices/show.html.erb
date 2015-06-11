@@ -2,7 +2,7 @@
   <!--main content start-->
   <section class="main-content-wrapper">
     <div class="row action-row">
-      <div class="col-md-5"><h1 class="invoice_no">Invoice: <%= @invoice.number %></h1></div>
+      <div class="col-md-5"><h1 class="invoice_no">Invoice: <%= invoice_prefix + @invoice.number.to_s %></h1></div>
       <div class="col-md-7">
         <div class="clearfix">
           <div class="pull-right">
@@ -20,7 +20,7 @@
       <div class="modal-dialog modal-md">
         <div class="modal-content">
           <p>
-          You are about to send invoice <%= @invoice.number %> to
+          You are about to send invoice <%= invoice_prefix + @invoice.number.to_s %> to
           <b>KOCO Company.</b><br>
           Please confirm or cancel below to complete transaction.
           </p>
@@ -87,7 +87,7 @@
             <tbody>
             <tr>
               <td>Invoice #</td>
-              <td id="invoice_number"><%= @invoice.number %></td>
+              <td id="invoice_number"><%= invoice_prefix + @invoice.number.to_s %></td>
             </tr>
             <tr>
               <td>Invoice Date</td>
