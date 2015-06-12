@@ -1,5 +1,6 @@
 class InvoicesController < ApplicationController
   def index
+		@invoices = Invoice.all.page params[:page]
   end
 
   def new
