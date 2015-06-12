@@ -7,6 +7,18 @@ RSpec.describe InvoicesController, type: :controller do
       get :index
       expect(response).to have_http_status(:success)
     end
+
+    it "assings paginated object to @invoices" do
+      invoice = double('invoice')
+      allow(Invoice).to receive(:all).and_return(invoice)
+      allow(invoice).to receive(:page).and_return(invoice)
+
+      get :index
+
+      expect(Invoice).to have_received(:all)
+      expect(invoice).to have_received(:page)
+      expect(assigns[:invoices]).to eq invoice
+    end
   end
 
   describe "GET #new" do
