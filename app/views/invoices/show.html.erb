@@ -91,7 +91,7 @@
             </tr>
             <tr>
               <td>Invoice Date</td>
-              <td id="invoice_date"><%= @invoice.date_of_issue.to_formatted_s(:short) %></td>
+              <td id="invoice_date"><%= @invoice.date_of_issue.to_formatted_s(:long) %></td>
             </tr>
             <tr>
               <td>PO #</td>
@@ -114,23 +114,21 @@
           <table class="table" id="items">
             <thead>
               <tr class="active">
-                <th>Task</th>
-                <th>Entry Notes</th>
-                <th class="text-center">Rate</th>
+                <th colspan="2">Task</th>
                 <th class="text-center">Qty</th>
                 <th class="text-center">Kind</th>
+                <th class="text-center">Rate</th>
                 <th class="text-center">Line Total</th>
               </tr>
             </thead>
             <tbody>
             <% @invoice.items.each do |item| %>
               <tr>
-                <td>Coding</td>
-                <td class="description"><%= item.description %></td>
-                <td class="item_note text-center">100</td>
+                <td class="description" colspan="2"><%= item.description %></td>
                 <td class="item_qty text-center"><%= item.qty %></td>
                 <td class="item_kind text-center"><%= item.item_kind.name %></td>
-                <td class="line_total text-center">800</td>
+                <td class="item_price text-center"><%= item.price %></td>
+                <td class="item_line_total text-center"><%= item.price.to_i * item.qty.to_i %></td>
               </tr>
             <% end %>
             </tbody>
@@ -157,9 +155,9 @@
 
       <div class="row">
         <div class="col-md-12">
-          <aside>
+          <aside id="invoice_terms">
             <p><b>Terms</b></p>
-            <p id="invoice_terms"><%= simple_format @invoice.terms %></p>
+            <p><%= simple_format @invoice.terms %></p>
           </aside>
         </div>
       </div>
