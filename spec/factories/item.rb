@@ -1,10 +1,9 @@
 FactoryGirl.define do
 
   factory :item do
-  	qty rand(1..10)
-    kind ['hours', 'service', 'product', 'days', 'deposit', 'expenses'].sample
+  	qty Kernel::rand(1..10)
 		description Faker::Lorem.sentence
-		price Faker::Commerce.price
+    price Kernel::rand(1..50)
 		total 20
 		association :invoice, factory: :invoice
 		association :item_kind, factory: :item_kind
