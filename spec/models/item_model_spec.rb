@@ -18,4 +18,11 @@ describe Item do
 			expect(Item.index_increment).to eq count + 3
 		end
 	end
+
+  describe '#update_total' do
+    it 'multiply qty by price to get total' do
+      item = create(:item, price: 700.60, qty: 2)
+      expect(item.total).to eq (700.60 * 2)
+    end
+  end
 end
