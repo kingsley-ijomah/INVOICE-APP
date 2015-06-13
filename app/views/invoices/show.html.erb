@@ -128,7 +128,7 @@
                 <td class="item_qty text-center"><%= item.qty %></td>
                 <td class="item_kind text-center"><%= item.item_kind.name %></td>
                 <td class="item_price text-center"><%= item.price %></td>
-                <td class="item_line_total text-center"><%= item.price.to_i * item.qty.to_i %></td>
+                <td class="item_line_total text-center"><%= "%.2f" % item.total %></td>
               </tr>
             <% end %>
             </tbody>
