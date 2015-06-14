@@ -100,7 +100,7 @@
             <tfoot>
               <tr class="active">
                 <td>Amount Due</td>
-                <td>£0.00 GBP</td>
+                <td id="total-top">£ <%= precision2f(@invoice.total) %></td>
               </tr>
             </tfoot>
             </tbody>
@@ -128,7 +128,7 @@
                 <td class="item_qty text-center"><%= item.qty %></td>
                 <td class="item_kind text-center"><%= item.item_kind.name %></td>
                 <td class="item_price text-center"><%= item.price %></td>
-                <td class="item_line_total text-center"><%= "%.2f" % item.total %></td>
+                <td class="item_line_total text-center"><%= precision2f(item.total) %></td>
               </tr>
             <% end %>
             </tbody>
@@ -136,7 +136,7 @@
               <tr>
                 <td colspan="4"></td>
                 <td class="text-right">Total</td>
-                <td class="text-center"><b>£800.00 GBP</b></td>
+                <td class="text-center"><b id="total">£<%= precision2f(@invoice.total) %> </b></td>
               </tr>
               <tr>
                 <td colspan="4"></td>
