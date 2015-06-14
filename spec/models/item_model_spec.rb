@@ -24,5 +24,19 @@ describe Item do
       item = create(:item, price: 700.60, qty: 2)
       expect(item.total).to eq (700.60 * 2)
     end
+
+    it 'reset total after update' do
+      item = create(:item, price: 2.50, qty: 1)
+      item.qty = 2
+      item.save
+      expect(item.total).to eq (2.50 * 2)
+    end
+
+    it 'gets totals for invoice' do
+      item_1 = create(:item, price: 2.50, qty: 1)
+      item_2 = create(:item, price: 2.50, qty: 1, invoice_id: item_1.invoice.id)
+      
+      expect(item_2.invoice.calculate_items_totals).to eq (5.00)
+    end
   end
 end
