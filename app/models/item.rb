@@ -1,23 +1,27 @@
 class Item
-	include Mongoid::Document
-	include Mongoid::Timestamps
+  include Mongoid::Document
+  include Mongoid::Timestamps
 
-	belongs_to :invoice
-	belongs_to :item_kind
+  belongs_to :invoice
+  belongs_to :item_kind
 
-	field :qty, type: Integer
-	field :description, type: String
-	field :price, type: Float
-	field :total, type: Float
+  field :qty, type: Integer
+  field :description, type: String
+  field :price, type: Float
+  field :total, type: Float
+
+  after_save do
+    self.invoice.update_total
+  end
 
   before_save do
     self.total = self.price * self.qty
   end
 
-	# used by ajax link in _form.html to increment
-	# nested attributes index
-	def self.index_increment
-		@index ||= -1
-		@index += 1
-	end
+  # used by ajax link in _form.html to increment
+  # nested attributes index
+  def self.index_increment
+    @index ||= -1
+    @index += 1
+  end
 end
