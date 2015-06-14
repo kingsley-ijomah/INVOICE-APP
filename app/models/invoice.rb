@@ -1,20 +1,35 @@
 class Invoice
-	include Mongoid::Document
-	include Mongoid::Timestamps
+  include Mongoid::Document
+  include Mongoid::Timestamps
 
-	belongs_to :organisation
-	belongs_to :client
+  belongs_to :organisation
+  belongs_to :client
   belongs_to :company
-	has_many :items, autosave: true
+  has_many :items, autosave: true
 
-	field :number, type: Integer
-	field :date_of_issue, type: DateTime
-	field :po_number, type: String
-	field :discount, type: Integer
-	field :note, type: String
+  field :number, type: Integer
+  field :date_of_issue, type: DateTime
+  field :po_number, type: String
+  field :discount, type: Integer
+  field :note, type: String
   field :terms, type: String
+  field :total, type: Float
 
-	validates :number, presence: true
+  validates :number, presence: true
   validates :date_of_issue, presence: true
   validates :terms, presence: true
+
+  def calculate_items_totals
+    total = 0
+    self.items.each do |item|
+      total += item.total
+    end
+    total
+  end
+
+  def update_total
+    self.total = calculate_items_totals
+    self.save
+  end
+
 end
