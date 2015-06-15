@@ -38,14 +38,14 @@
               <tbody>
               <% @invoices.each do |invoice| %>
                 <tr>
-                  <td><a href="invoice-view.html" class="text-link"><%= invoice_prefix + invoice.number.to_s %></a></td>
+                  <td><%= link_to invoice_prefix + invoice.number.to_s, invoice_url(invoice.id), class: "text-link" %></td>
                   <td><%= invoice.client.organisation.name %></td>
                   <td><%= invoice.created_at.to_formatted_s(:long) %></td>
-                  <td>---</td>
+                  <td class='invoice-total'><%= to_currency(invoice.total) %> </td>
                   <td class="text-muted">draft</td>
                   <td>
-                    <a class="btn btn-xs btn-square btn-default" href="invoice-view.html" role="button">view</a>
-                    <a class="btn btn-xs btn-square btn-info" href="invoice-create.html" role="button">edit</a>
+                    <%= link_to "view", invoice_url(invoice.id), class: "btn btn-xs btn-square btn-default view", role: "button" %>
+                    <%= link_to "edit", edit_invoice_url(invoice.id), class: "btn btn-xs btn-square btn-info edit", role: "button" %>
                   </td>
                 </tr>
               <% end %>
@@ -58,7 +58,7 @@
               <%= paginate @invoices %> 
             </div>
             <div class="col-md-4">
-              <p class="text-right invoice_totals"><b>Invoice totals:</b> &nbsp; £63,000.00</p>
+              <p class="text-right invoice_totals"><b>Invoice totals:</b> &nbsp; <%= to_currency(Invoice.total) %></p>
             </div>
           </div>
         </div>

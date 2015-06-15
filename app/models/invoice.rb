@@ -20,16 +20,16 @@ class Invoice
   validates :terms, presence: true
 
   def calculate_items_totals
-    total = 0
-    self.items.each do |item|
-      total += item.total
-    end
-    total
+    self.items.sum :total
   end
 
   def update_total
     self.total = calculate_items_totals
     self.save
+  end
+
+  def self.total
+    Invoice.all.sum :total
   end
 
 end
