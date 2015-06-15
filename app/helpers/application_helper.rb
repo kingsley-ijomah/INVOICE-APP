@@ -1,7 +1,5 @@
 module ApplicationHelper
-  def precision2f(n)
-    unless n.nil?
-      "%.2f" % n
-    end
+  def to_currency(n)
+    number_to_currency(n, unit: "£")
   end
 end
