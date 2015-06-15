@@ -17,6 +17,9 @@ class InvoicesController < ApplicationController
   	end
   end
 
+  def edit
+  end
+
   def show
     @invoice = Invoice.find(params[:id])
   end
