@@ -64,21 +64,14 @@
 </html>
 
 <script type="text/javascript">
-<%# $('#invoice_date_of_issue').datepicker({ %>
-      <%#   format: "dd/mm/yyyy", %>
-      <%#   clearBtn: true, %>
-      <%#   multidate: false, %>
-      <%#   autoclose: true, %>
-      <%#   todayHighlight: true %>
-      <%# }); %>
-
-$('#datetimepicker8').datetimepicker({
-icons: {
-time: "fa fa-clock-o",
-date: "fa fa-calendar",
-up: "fa fa-arrow-up",
-down: "fa fa-arrow-down"
-}
-});
+  $('#datetimepicker8').datetimepicker({
+    format: 'DD/MM/YYYY hh:mm',
+    icons: {
+      time: "fa fa-clock-o",
+      date: "fa fa-calendar",
+      up: "fa fa-arrow-up",
+      down: "fa fa-arrow-down"
+    }
+  });
 </script>
 
