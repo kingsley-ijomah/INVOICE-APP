@@ -1,14 +1,44 @@
+<div class="row">
+  <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <p>
+        You are about to send invoice <%= add_invoice_prefix(@invoice.number) %> to
+        <b>KOCO Company.</b><br>
+        Please confirm or cancel below to complete transaction.
+        </p>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade load-enter-payment" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <section id="main-wrapper" class="theme-default">
   <!--main content start-->
   <section class="main-content-wrapper">
     <div class="row action-row">
-      <div class="col-md-5"><h1 class="invoice_no">Invoice: <%= invoice_prefix + @invoice.number.to_s %></h1></div>
+      <div class="col-md-5"><h1 class="invoice_no">Invoice: <%= add_invoice_prefix(@invoice.number) %></h1></div>
       <div class="col-md-7">
         <div class="clearfix">
           <div class="pull-right">
-            <a class="btn btn-sm btn-success" href="enter-payment.html" data-toggle="modal" data-target=".load-enter-payment" role="button">
-              Enter Payment
-            </a>
+
+            <%= link_to 'Enter Payment', new_invoice_payments_path(@invoice), class: 'btn btn-sm btn-success', 
+              role: 'button', :data => {target: '.load-enter-payment', toggle: 'modal'}  %>
+
             <a class="btn btn-sm btn-success" href="#" data-toggle="modal" data-target=".bs-example-modal-md" role="button">Send Invoice</a>
             <a class="btn btn-sm btn-default" href="invoice-create.html" role="button">Edit</a>
           </div>
@@ -16,31 +46,6 @@
       </div>
     </div>
 
-    <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-md">
-        <div class="modal-content">
-          <p>
-          You are about to send invoice <%= invoice_prefix + @invoice.number.to_s %> to
-          <b>KOCO Company.</b><br>
-          Please confirm or cancel below to complete transaction.
-          </p>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-success">Confirm</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade load-enter-payment" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-
-        </div>
-      </div>
-    </div>
 
     <div id="container">
       <div class="row">
@@ -87,7 +92,7 @@
             <tbody>
             <tr>
               <td>Invoice #</td>
-              <td id="invoice_number"><%= invoice_prefix + @invoice.number.to_s %></td>
+              <td id="invoice_number"><%= add_invoice_prefix(@invoice.number) %></td>
             </tr>
             <tr>
               <td>Invoice Date</td>
