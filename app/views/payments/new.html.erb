@@ -1,0 +1,126 @@
+<style type="text/css">
+.save-payment-row {
+  margin-top: 30px;
+}
+
+label {
+  min-width: 110px !important;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.checkbox {
+  margin-left: 117px;
+}
+
+.form-group {
+  margin-bottom: 10px !important;
+}
+
+.invoice-amount {
+  margin-top: 20px;
+}
+
+.invoice-amount span {
+  font-size: 20px;
+}
+
+.content-margin {
+  padding: 10px;
+}
+
+.panel-heading p {
+  margin: 0px;
+}
+</style>
+
+
+<% @payment.errors.full_messages.each do |msg| %>
+  <p class="text-danger"><%= msg %> </p>
+<% end %>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><p class="text-center" id="panel-title"><b>Invoice <%= add_invoice_prefix(@invoice.number) %></b></p></h3>
+        <div class="actions pull-right">
+          <i class="fa fa-times" data-dismiss="modal"></i>
+        </div>
+      </div>
+
+      <div class="panel-body">
+        <%= form_for([@invoice, @payment]) do |f| %>
+          <div class="content-margin">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <label>Payment (GBP)</label>
+                    <%= f.text_field :amount, class: 'form-control', required: true %>
+
+                    <div class="checkbox">
+                      <label>
+                        <%= check_box_tag :pay_in_full %>
+                        Pay in full
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group invoice-amount">
+                  <label>Invoice Amount</label>
+                  <span class="text-success" id="amount"><%= to_currency(@invoice.total) %></span>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <label>Date</label>
+                    <div class='input-group date' id='datetimepicker8'>
+                      <%= f.text_field :date, class: 'form-control', required: true %>
+                      <span class="input-group-addon">
+                        <span class="fa fa-calendar">
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-inline">
+                  <div class="form-group">
+                    <label>Note</label>
+                    <%= f.text_area :note, class: 'form-control' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row save-payment-row">
+              <div class="col-md-12">
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <%= f.submit "Save Payment", class: 'btn btn-success' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+$('#datetimepicker8').datetimepicker({
+format: 'DD/MM/YYYY hh:mm',
+icons: {
+time: "fa fa-clock-o",
+date: "fa fa-calendar",
+up: "fa fa-arrow-up",
+down: "fa fa-arrow-down"
+}
+});
+</script>
+
