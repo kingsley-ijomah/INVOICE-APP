@@ -13,10 +13,11 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
   }
 
-  resources :dashboard, :clients, :organisations, :items 
+  resources :dashboard, :clients, :organisations, :items  
   
   resources :invoices do 
     resources :items
+    resource :payments
   end
 
   # You can have the root of your site routed with "root"
