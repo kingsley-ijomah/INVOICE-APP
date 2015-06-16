@@ -9,5 +9,6 @@ FactoryGirl.define do
 		association :client, factory: :client
 		association :organisation, factory: :organisation
     association :company, factory: :company
+    association :payment, factory: :payment
 	end
 end
