@@ -6,6 +6,7 @@ class Invoice
   belongs_to :client
   belongs_to :company
   has_many :items, autosave: true
+  has_many :payments
 
   field :number, type: Integer
   field :date_of_issue, type: DateTime
