@@ -11,4 +11,8 @@ module InvoiceNumberHelper
       invoice_prefix + (n += 1).to_s
     end
   end
+
+  def add_invoice_prefix(n)
+    '#' + invoice_prefix + n.to_s
+  end
 end
