@@ -38,7 +38,7 @@
               <tbody>
               <% @invoices.each do |invoice| %>
                 <tr>
-                  <td><%= link_to invoice_prefix + invoice.number.to_s, invoice_url(invoice.id), class: "text-link" %></td>
+                  <td><%= link_to add_invoice_prefix(invoice.number), invoice_url(invoice.id), class: "text-link" %></td>
                   <td><%= invoice.client.organisation.name %></td>
                   <td><%= invoice.created_at.to_formatted_s(:long) %></td>
                   <td class='invoice-total'><%= to_currency(invoice.total) %> </td>
