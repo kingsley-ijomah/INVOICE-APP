@@ -24,7 +24,7 @@ feature 'View Invoice' do
 		expect(page.find('.item_price')).to have_content(@item.price)
     expect(page.find('.item_line_total')).to have_content("%.2f" % (@item.price * @item.qty))
     expect(page.find('#total')).to have_content("%.2f" % (@item.total))
-    expect(page.find('#total-top')).to have_content("%.2f" % (@item.total))
+    expect(page.find('#due')).to have_content("%.2f" % (@item.total))
     
     expect(page.find('#company_name')).to have_content(@company.name)
     expect(page.find('#company_street_1')).to have_content(@company.street_1)
