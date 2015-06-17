@@ -33,4 +33,12 @@ class Invoice
     Invoice.all.sum :total
   end
 
+  def total_amount_paid
+    self.payments.sum :amount
+  end
+
+  def total_amount_due
+    total - total_amount_paid
+  end
+
 end
