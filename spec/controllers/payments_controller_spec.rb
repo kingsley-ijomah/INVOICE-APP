@@ -31,7 +31,7 @@ describe PaymentsController do
 
       expect(Payment).to have_received(:new).with(attributes.merge(invoice_id: invoice.id))
       expect(payment).to have_received(:save)
-      expect(response).to redirect_to invoices_url
+      expect(response).to redirect_to invoice_path(invoice.id)
     end
 
     it 'invalid post' do

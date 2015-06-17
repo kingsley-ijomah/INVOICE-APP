@@ -9,7 +9,7 @@ class PaymentsController < ApplicationController
   def create
     @payment = Payment.new(payments_params)
     if @payment.save
-      redirect_to invoices_path
+      redirect_to invoice_path(params[:invoice_id])
     else
       render 'new'
     end
