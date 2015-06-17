@@ -105,7 +105,7 @@
             <tfoot>
               <tr class="active">
                 <td>Due</td>
-                <td id="total-top"><%= to_currency(@invoice.total) %></td>
+                <td id="due"><%= to_currency(@invoice.total_amount_due) %></td>
               </tr>
             </tfoot>
             </tbody>
@@ -146,12 +146,12 @@
               <tr>
                 <td colspan="4"></td>
                 <td class="text-right">Amount Paid</td>
-                <td class="text-center">£800.00 GBP</td>
+                <td class="text-center" id="amount-paid"><%= to_currency(@invoice.total_amount_paid) %></td>
               </tr>
               <tr>
                 <td colspan="4"></td>
                 <td class="text-right">Amount Due</td>
-                <td class="text-center active"><b>£0.00 GBP</b></td>
+                <td class="text-center active" id="amount-due"><b><%= to_currency(@invoice.total_amount_due) %></b></td>
               </tr>
             </tfoot>
           </table>
