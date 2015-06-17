@@ -20,5 +20,9 @@ describe InvoiceNumberHelper, type: :helper do
     it 'it add 0000 prefix to invoice' do
       expect(helper.invoice_prefix).to eq ('0000')
     end
+
+    it 'adds invoice prefix to any number given' do
+      expect(helper.add_invoice_prefix(13)).to eq '#000013'
+    end
   end
 end
