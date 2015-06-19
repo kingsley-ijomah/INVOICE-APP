@@ -3,8 +3,8 @@
     <div class="modal-dialog modal-md">
       <div class="modal-content">
         <p>
-        You are about to send invoice <%= add_invoice_prefix(@invoice.number) %> to
-        <b>KOCO Company.</b><br>
+        You are about to send invoice <span id="invoice_no"><%= add_invoice_prefix(@invoice.number) %></span> to
+        <b id="company">KOCO Company.</b><br>
         Please confirm or cancel below to complete transaction.
         </p>
 
