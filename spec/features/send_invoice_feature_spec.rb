@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature SendInvoice do
+feature 'SendInvoice' do
   scenario 'send invoice to client' do
     invoice = create(:invoice) 
     create(:item, invoice_id: invoice.id, qty: 1, price: 1000.00)
@@ -9,8 +9,8 @@ feature SendInvoice do
     visit invoice_path(invoice.id)
     click_link 'Send Invoice'
 
-    expect(page).to have_content(org.name)
-    expect(page).to have_content(invoice.number)
+    expect(page.find('#company')).to have_content(org.name)
+    expect(page.find('#invoice_no')).to have_content(invoice.number)
 
     click_button 'Confirm'
 
