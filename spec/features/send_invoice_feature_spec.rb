@@ -14,6 +14,6 @@ feature 'SendInvoice' do
 
     click_button 'Confirm'
 
-    expect(page).to have_content('You have successfully sent invoice #0000' + invoice.number + ' to ' + org.name)
+    expect(page).to have_content('You have successfully sent invoice #0000' + invoice.number.to_s + ' to ' + org.name)
   end  
 end
