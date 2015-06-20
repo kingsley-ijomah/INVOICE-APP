@@ -36,10 +36,17 @@
   <section class="main-content-wrapper">
     <%= render 'shared/page_header' %>
 
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-
+     <% if notice %>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+              <strong>Notice!</strong> <%= notice %>
+          </div>
+        </div>
+      </div>
+    <% end %>   
+    
     <% if alert %>
       <p class="alert"><%= alert %></p>
     <% end %>
