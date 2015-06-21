@@ -1,5 +1,7 @@
 require "rails_helper"
 
 RSpec.describe InvoiceMailer, type: :mailer do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#send_invoice_mail' do
+    it 'sends mail' 
+  end
 end
