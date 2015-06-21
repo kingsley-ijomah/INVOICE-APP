@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe SendInvoicesController do 
-  describe '#new' do
+  describe 'Get #new' do
     it 'assigns invoice to @invoice' do
       invoice = double('invoice', id: '1')
       allow(Invoice).to receive(:find).with(invoice.id).and_return(invoice)
