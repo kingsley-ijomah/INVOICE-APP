@@ -1,103 +1,91 @@
 <DOCTYPE html>
 <html>
 <head>
-  <title>KOCO invoice</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title><%= Company.first.name %> invoice</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
 <body style="margin: 40px 0px 0px 0px; padding: 0px; font-family: Arial; font-size: 12px;">
 
-  <table border="0" cellpadding="5" cellspacing="0" width="500px" align="center">
-    <tr>
-      <td><b>KOCO LONDON LTD</b></td>
-      <td>
-        <p style="text-align: right; margin-bottom:0px; margin-top:0px;">Invoice date: June 17 2015</p>
-        <p style="text-align: right; margin-bottom:0px; margin-top:0px;">Invoice #: 00001</p>
-      </td>
-    </tr>
+<table border="0" cellpadding="5" cellspacing="0" width="500px" align="center">
+  <tr>
+    <td><b><%= Company.first.name %></b></td>
+    <td>
+      <p style="text-align: right; margin-bottom:0px; margin-top:0px;">Invoice date: <%= @invoice.date_of_issue.to_formatted_s(:long) %> </p>
+      <p style="text-align: right; margin-bottom:0px; margin-top:0px;">Invoice: <%= add_invoice_prefix(@invoice.number) %></p>
+    </td>
+  </tr>
 
-    <tr>
-      <td colspan="2"><hr></td>
-    </tr>
+  <tr>
+    <td colspan="2"><hr></td>
+  </tr>
 
-    <tr>
-      <td>
-        <p>
-          8 King Edwards Court<br>
-          36 Blackwell Lane<br>
-          Warwickshire<br>
-          CV35 7ST.
-        </p>
-      </td>
-      <td>
-        <b>Invoice To</b>
-        <p>
-          GENEO LTD.<br>
-          7 Parade<br>
-          Leamington Spa<br>
-          CV32 4DG
-        </p>
-      </td>
-    </tr>
+  <tr>
+    <td>
+      <p>
+      8 King Edwards Court<br>
+      36 Blackwell Lane<br>
+      Warwickshire<br>
+      CV35 7ST.
+      </p>
+    </td>
+    <td>
+      <b>Invoice To</b>
+      <p>
+      GENEO LTD.<br>
+      7 Parade<br>
+      Leamington Spa<br>
+      CV32 4DG
+      </p>
+    </td>
+  </tr>
 
-    <tr>
-      <td colspan="2"><hr style="border-color: #eee; border-width: 1px 0; margin: 5px 0;"></td>
-    </tr>
-  </table>
+  <tr>
+    <td colspan="2"><hr style="border-color: #eee; border-width: 1px 0; margin: 5px 0;"></td>
+  </tr>
+</table>
 
-  <table border="0" cellpadding="5" cellspacing="0" width="500px"  align="center">
-    <tr>
-        <th style="text-align: left;">Task</th>
-        <th style="text-align: left;">Qty</th>
-        <th style="text-align: left;">Kind</th>
-        <th style="text-align: left;">Rate</th>
-        <th style="text-align: right;">Line Total</th>
-    </tr>
+<table border="0" cellpadding="5" cellspacing="0" width="500px"  align="center">
+  <tr>
+    <th style="text-align: left;">Task</th>
+    <th style="text-align: left;">Qty</th>
+    <th style="text-align: left;">Kind</th>
+    <th style="text-align: left;">Rate</th>
+    <th style="text-align: right;">Line Total</th>
+  </tr>
 
+  <% @invoice.items.each do |item| %>
     <tr>
-      <td>Coding for month of May.</td>
-      <td>10</td>
-      <td>Days</td>
-      <td>400</td>
-      <td style="text-align: right;">£4000.00</td>
+      <td><%= item.description %></td>
+      <td><%= item.qty %></td>
+      <td><%= item.item_kind.name %></td>
+      <td><%= item.price %></td>
+      <td style="text-align: right;"><%= to_currency(item.total) %></td>
     </tr>
-    <tr>
-      <td>Coding for month of May.</td>
-      <td>10</td>
-      <td>Days</td>
-      <td>400</td>
-      <td style="text-align: right;">£4000.00</td>
-    </tr>
-    <tr>
-      <td>Coding for month of May.</td>
-      <td>10</td>
-      <td>Days</td>
-      <td>400</td>
-      <td style="text-align: right;">£4000.00</td>
-    </tr>
+  <% end %>
 
-    <tr>
-      <td colspan="5"><hr style="border-color: #eee; border-width: 1px 0; margin: 5px 0;"></td>
-    </tr>
-  </table>
+  <tr>
+    <td colspan="5"><hr style="border-color: #eee; border-width: 1px 0; margin: 5px 0;"></td>
+  </tr>
+</table>
 
-  <table border="0" cellpadding="5" cellspacing="0" width="500px"  align="center">
-    <tr>
-      <td style="text-align: right; width: 85%;">Amount Paid:</td>
-      <td style="text-align: right; width: 15%;">£0.00</td>
-    </tr>
-    <tr>
-      <td style="font-weight: bold; text-align: right; width: 85%;">Amount Due:</td>
-      <td style="text-align: right; width: 15%;">£1200.00</td>
-    </tr>
-  </table>
+<table border="0" cellpadding="5" cellspacing="0" width="500px"  align="center">
+  <tr>
+    <td style="text-align: right; width: 85%;">Amount Paid:</td>
+    <td style="text-align: right; width: 15%;"><%= to_currency(@invoice.total_amount_paid) %></td>
+  </tr>
+  <tr>
+    <td style="font-weight: bold; text-align: right; width: 85%;">Amount Due:</td>
+    <td style="text-align: right; width: 15%;"><%= to_currency(@invoice.total_amount_due) %></td>
+  </tr>
+</table>
 
-  <table border="0" cellpadding="5" cellspacing="0" width="500px"  align="center" style="margin-top: 20px;">
-    <tr>
-      <td style="text-align: center; color: #d3d3d3">Invoice system is powered by: KOCO</td>
-    </tr>
-  </table>
+<table border="0" cellpadding="5" cellspacing="0" width="500px"  align="center" style="margin-top: 20px;">
+  <tr>
+    <td style="text-align: center; color: #d3d3d3">Invoice system by: KOCO</td>
+  </tr>
+</table>
 
 </body>
 
