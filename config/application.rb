@@ -46,6 +46,7 @@ module InvoiceApp
                                  'clients.css',
                                  'invoices.css',
                                  'invoices-new.css',
+                                 'invoices-edit.css',
                                  'invoices-show.css'
                                 ]
     #controller js assets
