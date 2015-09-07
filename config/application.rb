@@ -47,7 +47,8 @@ module InvoiceApp
                                  'invoices.css',
                                  'invoices-new.css',
                                  'invoices-edit.css',
-                                 'invoices-show.css'
+                                 'invoices-show.css',
+                                 'invoice_settings.css'
                                 ]
     #controller js assets
     config.assets.precompile += [
@@ -60,8 +61,8 @@ module InvoiceApp
                                  'mail.js',
                                  'maps.js',
                                  'invoices.js',
-                                 'accounting.js'
-          
+                                 'accounting.js',
+                                 'invoice_settings.js'
                                 ]
                                 
     #required to get migration to work with mongoid
