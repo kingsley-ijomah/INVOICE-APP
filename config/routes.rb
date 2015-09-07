@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
   }
 
-  resources :dashboard, :clients, :organisations, :items  
+  resources :dashboard, :clients, :organisations, :items, :invoice_settings
 
   resources :invoices do 
     resources :items
