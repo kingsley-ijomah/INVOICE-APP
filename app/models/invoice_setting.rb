@@ -2,6 +2,6 @@ class InvoiceSetting
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  field :name, type: String
-  field :value, type: String
+  field :terms, type: String
+  field :notes, type: String
 end
