@@ -130,7 +130,7 @@
                      <div class="row notes-row">
                        <div class="col-md-8">
                          <div class="form-group">
-                           <label>Terms (<a href="">Set default</a>)</label>
+                           <label>Terms (<%= link_to 'Set Default', new_invoice_setting_path %>)</label>
                            <%= f.text_area :terms, class: 'form-control', rows: 3, required: true %>
                          </div>
                        </div>
