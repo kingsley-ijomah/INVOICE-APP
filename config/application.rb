@@ -64,7 +64,7 @@ module InvoiceApp
                                  'accounting.js',
                                  'invoice_settings.js'
                                 ]
-                                
+
     #required to get migration to work with mongoid
     config.generators do |g|
       g.orm :active_record
