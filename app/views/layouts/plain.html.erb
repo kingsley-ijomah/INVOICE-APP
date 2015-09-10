@@ -14,13 +14,12 @@
   <script src="assets/js/vendor/respond.min.js"></script>
   <![endif]-->
 
-  <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  <%# <script src="http://maps.google.com/maps/api/js?sensor=true"></script> %>
     <!-- Global styles -->
     <%= stylesheet_link_tag 'base' %>
     <!-- Page level styles -->
     <%= stylesheet_link_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.css") %> 
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= csrf_meta_tags %>
 </head>
 <body>
 
@@ -36,12 +35,13 @@
 
  <!-- Global scripts -->
  <%= javascript_include_tag 'base' %>
+
  <!-- Page level plugin scripts -->
  <%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>
  <%= javascript_include_tag 'application' %>
+ <%= csrf_meta_tag %>
  <%= yield :javascript %>
  
 </body>
 </html>
-
 

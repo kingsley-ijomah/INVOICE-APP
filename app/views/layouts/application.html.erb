@@ -71,6 +71,11 @@
 </html>
 
 <script type="text/javascript">
+  // hack to prevent ajax from throwing Synchronous XMLHttpRequest  errors
+  // $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
+  //     options.async = true;
+  // });
+
   $('#datetimepicker8').datetimepicker({
     format: 'DD/MM/YYYY hh:mm',
     icons: {
@@ -81,4 +86,3 @@
     }
   });
 </script>
-
