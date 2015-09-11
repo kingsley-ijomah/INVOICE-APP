@@ -13,7 +13,7 @@
 // https://github.com/PerfectlyNormal/highcharts-rails
 
 //= require src/app
-// require jquery
+//= require jquery
 //= require jquery_ujs
 //= require bootstrap-3.3.5-dist/js/bootstrap.min
 //= require navgoco/jquery.navgoco.min
