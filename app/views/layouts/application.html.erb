@@ -22,7 +22,7 @@
 <%= stylesheet_link_tag "#{params[:controller]}-#{params[:action]}" if ::Rails.application.assets.find_asset("#{params[:controller]}-#{params[:action]}.css") %> 
 
 
-<%= stylesheet_link_tag 'application', media: 'all' %>
+<%= stylesheet_link_tag 'application', media: 'all', "data-turbolinks-track" => true %>
 <%= csrf_meta_tags %>
 </head>
 <body>
@@ -62,7 +62,7 @@
 <%= javascript_include_tag 'base' %>
 <!-- Page level plugin scripts -->
 <%= javascript_include_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.js") %>
-<%= javascript_include_tag 'application' %>
+<%= javascript_include_tag 'application', media: 'all', "data-turbolinks-track" => true %>
 <%= yield :javascript %>
 
 
@@ -71,10 +71,6 @@
 </html>
 
 <script type="text/javascript">
-  // hack to prevent ajax from throwing Synchronous XMLHttpRequest  errors
-  // $.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
-  //     options.async = true;
-  // });
 
   $('#datetimepicker8').datetimepicker({
     format: 'DD/MM/YYYY hh:mm',
@@ -85,4 +81,5 @@
       down: "fa fa-arrow-down"
     }
   });
+
 </script>
