@@ -1,3 +1,13 @@
+<div class="modal fade load-new-invoice-settings" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+ <div class="modal-dialog modal-md">
+   <div class="modal-content">
+    <div id="modal-body">
+      
+    </div>
+   </div>
+ </div>
+</div>
+
 <div id="container">
   <div class="row">
     <div class="col-md-9">
@@ -130,7 +140,11 @@
                      <div class="row notes-row">
                        <div class="col-md-8">
                          <div class="form-group">
-                           <label>Terms (<%= link_to 'Set Default', new_invoice_setting_path, :data => {target: '.load-new-invoice-settings', toggle: 'modal'} %>)</label>
+                           <label>
+                            Terms (<%= link_to 'Set Default', '#', :data => {target: '.load-new-invoice-settings', toggle: 'modal'} %>)
+                           </label>
+
+                           
                            <%= f.text_area :terms, class: 'form-control', rows: 3, required: true %>
                          </div>
                        </div>
@@ -141,16 +155,6 @@
                          </div>
                        </div>
                      </div>
-
-                     <div class="modal fade load-new-invoice-settings" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                       <div class="modal-dialog modal-md">
-                         <div class="modal-content">
-
-
-                         </div>
-                       </div>
-                     </div>
-
 
                      <hr>
 
