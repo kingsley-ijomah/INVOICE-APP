@@ -10,7 +10,7 @@ class InvoiceSettingsController < ApplicationController
     respond_to do |format|
       if @invoice_setting.save
         format.js
-        format.html { redirect_to(@invoice_setting, :notice => 'Article was successfully created.') }
+        # format.html { redirect_to(@invoice_setting, :notice => 'Article was successfully created.') }
         # format.xml  { render :xml => @invoice_setting, :status => :created, :location => @invoice_setting }
       else
         # format.html { render :action => "new" }
