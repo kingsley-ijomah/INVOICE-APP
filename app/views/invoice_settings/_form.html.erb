@@ -1,18 +1,31 @@
-<%= form_for(:invoice_setting, remote: true, url:invoice_settings_path) do |f| %>
-  <div class="row">
-    <div class="col-md-12" id="invoice_settings_form">
-      <div class="form-group">
-        <%= f.text_area :terms, class: 'form-control', placeholder: 'Default Terms', id: 'default-terms' %>
-      </div>
-      <div class="form-group">
-        <%= f.text_area :notes, class: 'form-control', placeholder: 'Default Notes', id: 'default-notes' %>
-      </div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Invoice Settings</h3>
+    <div class="actions pull-right">
+      <i class="fa fa-times" data-dismiss="modal"></i>
     </div>
   </div>
+  <div class="panel-body">
+  <div id="validation-errors"></div>
 
-  <div class="clearfix">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
-    <%= f.submit "Save Invoice Settings", class: 'btn btn-success pull-right' %>
-    <button type="reset" class="btn btn-default pull-right reset" data-dismiss="modal">Cancel</button>
+    <%= form_for(:invoice_setting, remote: true, url:invoice_settings_path) do |f| %>
+      <div class="row">
+        <div class="col-md-12" id="invoice_settings_form">
+          <div class="form-group">
+            <%= f.text_area :terms, class: 'form-control', placeholder: 'Default Terms', id: 'default-terms' %>
+          </div>
+          <div class="form-group">
+            <%= f.text_area :notes, class: 'form-control', placeholder: 'Default Notes', id: 'default-notes' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
+        <%= f.submit "Save Invoice Settings", class: 'btn btn-success pull-right' %>
+        <button type="reset" class="btn btn-default pull-right reset" data-dismiss="modal">Cancel</button>
+      </div>
+    <% end %>
+
   </div>
-<% end %>
+</div>
