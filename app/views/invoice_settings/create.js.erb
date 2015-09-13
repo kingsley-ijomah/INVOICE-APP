@@ -1,2 +1,4 @@
-console.log('TESTING OUTPUT!');
-$('#modal-body').html("<%= escape_javascript(render('form')) %>");
+$('#invoice_terms').val($('#default-terms').val())
+$('#invoice_note').val($('#default-notes').val())
+
+$('#myModal').modal('hide')
