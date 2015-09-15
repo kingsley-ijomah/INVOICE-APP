@@ -5,6 +5,9 @@ class InvoicesController < ApplicationController
 
   def new
   	@invoice = Invoice.new
+    @invoice_setting = InvoiceSetting.first || begin 
+      OpenStruct.new(terms:nil, notes:nil)
+    end
   end
 
   def create
