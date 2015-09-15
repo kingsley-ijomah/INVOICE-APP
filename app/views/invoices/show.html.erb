@@ -32,7 +32,7 @@
             <%= link_to 'Send Invoice', new_invoice_send_invoices_path(@invoice), class: 'btn btn-sm btn-success', 
               role: 'button', :data => {target: '.bs-example-modal-md', toggle: 'modal'}  %>
 
-            <a class="btn btn-sm btn-default" href="invoice-create.html" role="button">Edit</a>
+            <%= link_to 'Edit', edit_invoice_url(@invoice.id), class: 'btn btn-sm btn-default', role: 'button'%>
           </div>
         </div>
       </div>
