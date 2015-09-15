@@ -145,13 +145,13 @@
                            </label>
 
                            
-                           <%= f.text_area :terms, class: 'form-control', rows: 3, required: true %>
+                           <%= f.text_area :terms, class: 'form-control', rows: 3, required: true, value: @invoice_setting.terms %>
                          </div>
                        </div>
                        <div class="col-md-4">
                          <div class="form-group">
                            <label>Notes</label>
-                           <%= f.text_area :note, class: 'form-control', rows: 3 %>
+                           <%= f.text_area :note, class: 'form-control', rows: 3, value: @invoice_setting.notes %>
                          </div>
                        </div>
                      </div>
