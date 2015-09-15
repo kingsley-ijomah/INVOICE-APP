@@ -19,6 +19,7 @@ class InvoicesController < ApplicationController
 
   def edit
     @invoice = Invoice.find(params[:id])
+    # change format so calendar can pre-populate
     @invoice.format_date
   end
 

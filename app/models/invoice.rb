@@ -43,4 +43,8 @@ class Invoice
     end
   end
 
+  def format_date
+    self.date_of_issue = self.date_of_issue.strftime("%d/%m/%Y %H:%M")
+  end
+
 end
