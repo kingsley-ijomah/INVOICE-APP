@@ -19,6 +19,7 @@ class InvoicesController < ApplicationController
 
   def edit
     @invoice = Invoice.find(params[:id])
+    @invoice.format_date
   end
 
   def update
