@@ -38,7 +38,9 @@ class Invoice
   end
 
   def total_amount_due
-    total - total_amount_paid
+    unless total.nil?
+      total - total_amount_paid
+    end
   end
 
 end
